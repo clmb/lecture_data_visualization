@@ -1,4 +1,4 @@
-book_filename: "Data Vizualization - From a Human-Centered Design Perspective (Lecture Notes)"
+book_filename: "Human-Centered Data Viz"
 repo: https://github.com/clmb/lecture_data_visualization
 delete_merged_file: true
 clean: [packages.bib, bookdown.bbl]
