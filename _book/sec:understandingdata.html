@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Understanding your Data | Data Visualization - From a Human-Centered Perspective (Lecture Notes)</title>
+  <meta name="description" content="These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Understanding your Data | Data Visualization - From a Human-Centered Perspective (Lecture Notes)" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="your book url like https://clmb.github.io/lecture_data_visualization/" />
+  
+  <meta property="og:description" content="These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin." />
+  <meta name="github-repo" content="clmb/lecture_data_visualization/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Understanding your Data | Data Visualization - From a Human-Centered Perspective (Lecture Notes)" />
+  
+  <meta name="twitter:description" content="These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin." />
+  
+
+<meta name="author" content="Claudia Müller-Birn" />
+
+
+<meta name="date" content="2021-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sec:processdataviz.html"/>
+
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">DataViz - A Human-Centered Design Perspective</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="the-value-of-data-visualization.html"><a href="the-value-of-data-visualization.html"><i class="fa fa-check"></i><b>1</b> <span>The Value of Data Visualization</span></a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="the-value-of-data-visualization.html"><a href="the-value-of-data-visualization.html#visualization-example-napoleons-march"><i class="fa fa-check"></i><b>1.0.1</b> Visualization Example: Napoleon’s March</a></li>
+<li class="chapter" data-level="1.0.2" data-path="the-value-of-data-visualization.html"><a href="the-value-of-data-visualization.html#visualization-example-cholera-epidemic-in-london"><i class="fa fa-check"></i><b>1.0.2</b> Visualization Example: Cholera Epidemic in London</a></li>
+<li class="chapter" data-level="1.0.3" data-path="the-value-of-data-visualization.html"><a href="the-value-of-data-visualization.html#visualization-example-space-shuttle-challenger-disaster"><i class="fa fa-check"></i><b>1.0.3</b> Visualization Example: Space Shuttle Challenger Disaster</a></li>
+<li class="chapter" data-level="1.1" data-path="the-value-of-data-visualization.html"><a href="the-value-of-data-visualization.html#sec:hcd"><i class="fa fa-check"></i><b>1.1</b> Human-Centered Data Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html"><i class="fa fa-check"></i><b>2</b> The Process of Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-process-of-visualizing-data"><i class="fa fa-check"></i><b>2.1</b> The Process of Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-situation-level"><i class="fa fa-check"></i><b>2.1.1</b> The situation level</a></li>
+<li class="chapter" data-level="2.1.2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-datatask-abstraction-level"><i class="fa fa-check"></i><b>2.1.2</b> The data/task abstraction level</a></li>
+<li class="chapter" data-level="2.1.3" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-visual-encodinginteraction-idiom-level"><i class="fa fa-check"></i><b>2.1.3</b> The visual encoding/interaction idiom level</a></li>
+<li class="chapter" data-level="2.1.4" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-algorithmic-level"><i class="fa fa-check"></i><b>2.1.4</b> The algorithmic level</a></li>
+<li class="chapter" data-level="2.1.5" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#validity-of-your-vis-design"><i class="fa fa-check"></i><b>2.1.5</b> Validity of Your Vis Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#mapping-the-human-centered-design-process-and-the-nested-model"><i class="fa fa-check"></i><b>2.2</b> Mapping the Human-Centered Design Process and the Nested Model</a></li>
+<li class="chapter" data-level="2.3" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#major-elements-of-visualization-design"><i class="fa fa-check"></i><b>2.3</b> Major Elements of Visualization Design</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#reflecting-on-data"><i class="fa fa-check"></i><b>2.3.1</b> Reflecting on Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#reflecting-on-tasks"><i class="fa fa-check"></i><b>2.3.2</b> Reflecting on Tasks</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-how-of-visualization-design---at-a-glance"><i class="fa fa-check"></i><b>2.3.3</b> The How of Visualization Design - At A Glance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html"><i class="fa fa-check"></i><b>3</b> Understanding your Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#understanding-the-data-context"><i class="fa fa-check"></i><b>3.1</b> Understanding the Data Context</a></li>
+<li class="chapter" data-level="3.2" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#understanding-the-data-structure"><i class="fa fa-check"></i><b>3.2</b> Understanding the Data Structure</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#using-r-for-data-exploration"><i class="fa fa-check"></i><b>3.2.1</b> Using R for Data Exploration</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#visualizing-data"><i class="fa fa-check"></i><b>3.2.2</b> Visualizing Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#scatterplot"><i class="fa fa-check"></i><b>3.2.3</b> Scatterplot</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#histogram"><i class="fa fa-check"></i><b>3.2.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.2.5" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#density-plot"><i class="fa fa-check"></i><b>3.2.5</b> Density Plot</a></li>
+<li class="chapter" data-level="3.2.6" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#boxplot"><i class="fa fa-check"></i><b>3.2.6</b> Boxplot</a></li>
+<li class="chapter" data-level="3.2.7" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#compare-distributions"><i class="fa fa-check"></i><b>3.2.7</b> Compare Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#central-tendency"><i class="fa fa-check"></i><b>3.3.1</b> Central Tendency</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#median-and-iqr"><i class="fa fa-check"></i><b>3.3.2</b> Median, and IQR</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#outliers"><i class="fa fa-check"></i><b>3.3.3</b> Outliers</a></li>
+<li class="chapter" data-level="3.3.4" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#skewness"><i class="fa fa-check"></i><b>3.3.4</b> Skewness</a></li>
+<li class="chapter" data-level="3.3.5" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#covariance-and-correlation"><i class="fa fa-check"></i><b>3.3.5</b> Covariance and Correlation</a></li>
+<li class="chapter" data-level="3.3.6" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#correlation-matrix"><i class="fa fa-check"></i><b>3.3.6</b> Correlation Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#general-guidelines-for-eda"><i class="fa fa-check"></i><b>3.4</b> General Guidelines for EDA</a></li>
+<li class="chapter" data-level="3.5" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#tools-and-libraries-for-data-exploration"><i class="fa fa-check"></i><b>3.5</b> Tools and Libraries for Data Exploration</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Visualization - From a Human-Centered Perspective (Lecture Notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sec:understandingdata" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Understanding your Data</h1>
+<p>By building on the Nested odel of Munzner <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span>, we have realized how important it is to understand the context of the data origin and the data at hand. In this chapter, we focus on the data, because many data viz project start with so-called ‘’found data’’. These are data sets that are openly available on the internet, data sets in which creating you were not involved. The increasing use of data everywhere requires to think about data literacy, inclusion, and fairness to ensure that data creates value <span class="citation">(<a href="#ref-KoestenSimperl2021_dataUX" role="doc-biblioref">Koesten and Simperl 2021</a>)</span>. However, data is often reused, thus, we need to reflect on where data has been created. Koesten &amp; Simperl <span class="citation">(<a href="#ref-KoestenSimperl2021_dataUX" role="doc-biblioref">Koesten and Simperl 2021</a>)</span> differentiate three main activities to interact with data: inspecting, engaging with the data, and placing data in context.</p>
+<p>Thus, in order to understand, whether data are valuable for your research question and which questions you can really tackle with these data, you need an understanding of its origin (the context of creation) and an understanding of its structure.</p>
+<div id="understanding-the-data-context" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Understanding the Data Context</h2>
+<p>People’s perception of what constitutes good-quality data changed as they engaged with the data. Koesten &amp; Simperl <span class="citation">(<a href="#ref-KoestenSimperl2021_dataUX" role="doc-biblioref">Koesten and Simperl 2021</a>)</span> highlight the importance of engagement around datasets, including discussions, feedback, reviews, ratings, and means to contact data creators. User communities and peer support can complement documentation efforts and make dataset maintenance sustainable. They, furthermore, propose the three activities:</p>
+<ol style="list-style-type: decimal">
+<li>Explore the environment of the dataset’s creation (e.g., a study setup or the conditions surrounding data collection, with timeframes, geospatial boundaries, or configurations of collection devices).</li>
+<li>Explore the norms of the discipline in which the data was collected, including methods of analysis and validation, as well as limitations (e.g., common margins of error).</li>
+<li>Connect data with the world, gauging how representative it is and reflecting on assumptions about how much it mirrors reality (includes also the question of what might be missing from the data.</li>
+</ol>
+<p>Gebru et al. <span class="citation">(<a href="#ref-Gebruetal2018datasheets" role="doc-biblioref">Gebru et al. 2018</a>)</span> propose ‘’datasheets’’ inspired by more robust documentation standards in the electronics industry. Datasheets are meant to improve transparency and accountability of datasets and to be useful to both dataset creators and dataset consumers.
+For consumer of datasets, datasheets should encourage reflection on the process of creating, distributing, and maintaining a dataset (including benefits and harms). For dataset creators it helps also to reflect on the data and to make more informed decisions about its use. The authors offer guiding questions towards creating datasheets for datasets:</p>
+<ul>
+<li>Motivations: Describe the motivations for creating the dataset, including funding, any specific tasks the authors had in mind, and who the authors are.</li>
+<li>Composition: Describe the composition of the dataset, like what kinds of data are in it, how it was collected, whether labels are associated with the data, and whether the dataset contains sensitive information.</li>
+<li>Collection Process: Describe the data collection process, like how the data was collected, where or who is was collected from, who was involved in the collection process, and, if people are involved, if consent was given for the data to be collected.</li>
+<li>Processing: Whether the data was process or labelled and how it was done.</li>
+<li>Uses: The tasks the dataset is intended to be used for, how it has already been used, and limitations of use.
+Distribution: How the dataset will be distributed and to who, and any restrictions on distribution.</li>
+<li>Maintenance: Who and how the dataset will be maintained, and if and how others will be able to build on it.</li>
+</ul>
+<p>Building on this idea Holland et al. <span class="citation">(<a href="#ref-Hollandetal2018DatasetNutritionLabel" role="doc-biblioref">Holland et al. 2018</a>)</span> proposed the <a href="https://datanutrition.org/">dataset nutrion label</a>. An example is given in Fugure</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="images/dataset_nutrion_label.png" alt="Example of the Dataset Nutrion Label (first generation). Taken from https://datanutrition.org/" width="100%" />
+<p class="caption">
+FIGURE3.1: Example of the Dataset Nutrion Label (first generation). Taken from <a href="https://datanutrition.org/" class="uri">https://datanutrition.org/</a>
+</p>
+</div>
+</div>
+<div id="understanding-the-data-structure" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Understanding the Data Structure</h2>
+<!-- Useful Ressources:
+https://bookdown.org/ronsarafian/IntrotoDS/eda.html#summary-statistics
+https://www.hcbravo.org/IntroDataSci/bookdown-notes/exploratory-data-analysis-summary-statistics.html
+https://bookdown.org/BaktiSiregar/data-science-for-beginners/EDA.html-->
+<p>In this section, we focus on understanding the structure of our data by employing the Exploratory Data Analysis (EDA). EDA is an approach of analyzing data sets to summarize their main characteristics by using data visualizations. In 1970 John Tukey <span class="citation">(<a href="#ref-Tukey1977eda" role="doc-biblioref">Tukey 1977</a>)</span> introduced EDA with this seminal book on this topic. He was an extraordinary scientist who had a profound impact on statistics and computer science<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Much of what we cover in EDA today is based on his work. Part of EDA is the so-called initial data analysis (IDA) (<a href="https://towardsdatascience.com/a-basic-guide-to-initial-and-exploratory-data-analysis-6d2577dfc242" class="uri">https://towardsdatascience.com/a-basic-guide-to-initial-and-exploratory-data-analysis-6d2577dfc242</a>). IDA focuses on identifying data inconsistencies (e.g., missing values) and the description of the data properties; thus, EDA encompasses IDA.</p>
+<p>EDA allows the data analysts to achieve a richer qualitative understanding by ‘’looking at data to see what it seems to say’’. Explorative Data Analysis should be understood as an iterative process that supports:
+* the search for answers by visualizing, transforming, and modeling your data,
+* the generation of hypotheses about what might be happening in a data set, and
+* the refining of your analysis goals or the generation of additional goals.</p>
+<p>This step should not be underestimated since data analysts spend much of their time (sometimes 80% or more) cleaning and formatting data to make it suitable for analysis, then actually carrying out the analysis.</p>
+<p>EDA is based on three principles: (1) Continuous openness and re-expression, (2) Initial skepticism, and (3) Exploratory versus confirmatory. Rather than immediately imposing a model on the data that may obscure important details, EDA analysts try to find patterns in the data and describe them with simple summary statistics (descriptive statistics). It may take several iterations for the analyst to reach a satisfactory summary or ‘’smoothing’’ of the data<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Re-expressions or transformations of the data are essential for smoothing because they help the analyst identify new patterns.
+Because EDA analysts assume that there is no uniquely correct numerical summary of a data set, they are very skeptical of initial numerical summaries. Numerical summaries and smoothings are constantly tested against the raw data to ensure that they adequately represent the data. To identify patterns and look for data points that do not fit the smooth part (outliers), EDA analysts rely heavily on visualization.
+By supporting data exploration, EDA helps researchers generate hypotheses. These hypotheses can later be tested with formal confirmatory procedures using inferential statistics.</p>
+<!-- ### Recap: Exploration vs. Confirmation -->
+<!-- Erkläre mit den Wikipedia Artikel und dem Buch [@Christopher2017Statistics] -->
+<p>In summary, your goal during the EDA is to develop an understanding of your data. The easiest way to accomplish this is to use questions to guide your investigation. When you ask a question, the question focuses your attention on a particular part of your data set and helps you decide which graphs, models, or transformations to make.</p>
+<!-- Text von [@WickhamGrolemund2017Rfordatascience] -->
+<p>EDA is a creative process <span class="citation">(<a href="#ref-WickhamGrolemund2017Rfordatascience" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>, thus the key to asking meaningful questions is to generate a large number of questions. Of course, it is very challenging to generate these questions at the beginning because you are not familiar with the dataset. On the other hand, each new question you ask will expose you to a new aspect of your data and increase your chance of discovery. You can quickly break down the most interesting parts of your data - and develop a thought-provoking set of questions - if you follow each question with a new question based on your findings. This challenge has been already formulated by Tukey:</p>
+<blockquote>
+<p>Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question,
+which can always be made precise.
+— John Tukey (The future of data analysis. Annals of Mathematical Statistics 33 (1), (1962), page 13)</p>
+</blockquote>
+<p>There is no rule about what questions you should ask to guide your research. However, two types of questions will always be useful for making discoveries in your data. You can phrase these questions loosely as (1) What kind of variation occurs within my variables? and (2) What kind of co-variation occurs between my variables?</p>
+<div id="using-r-for-data-exploration" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Using R for Data Exploration</h3>
+<p>In the following, we address these two questions based on the example of Héctor Corrada Bravo from the EDA chapter of his course on <a href="http://www.hcbravo.org/IntroDataSci/bookdown-notes/exploratory-data-analysis-visualization.html">‘’Introduction to Data Science’’</a> from the Center for Bioinformatics and Computational Biology from the Univ. of Maryland.</p>
+<p>We employ the GNU R which is a widespread tool for statistical analysis. However, you can follow these steps with any programming language at hand. I would like to provide you an methodological understanding of how to explore data, rather than provide an introduction into R (<a href="http://www.r-project.org/" class="uri">http://www.r-project.org/</a>) which is a GNU project, thus, R is Free Software under the terms of GPL. There are over 2,000 user-contributed packages available at R CRAN (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>) with packages for specific functions or specific areas of study. It has an excellent integration with DBs (MySQL, SQLite) and automation based on scripts is easy. Furthermore, the graphical user interface RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>) makes its usage very convenient. R is an interpreted language. It supports procedural programming with functions and, for some functions, object-oriented programming with generic functions. A generic function acts differently depending on the type of arguments passed to it, for example, R has a generic print() function that can print almost every type of object in R with a simple ‘’print(objectname)’’ syntax. A Base R Cheat Sheet can be found <a href="https://www.povertyactionlab.org/sites/default/files/r-cheat-sheet.pdf">here</a>.</p>
+</div>
+<div id="visualizing-data" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Visualizing Data</h3>
+<p>In the following, we use the on-time data for all flights that departed NYC, i.e., JFK, LGA or EWR, in 2013. The Bureau of transportation statistics has released these data, and it was included into R. Let’s get an overview about this dataset.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="sec:understandingdata.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span>
+<span id="cb1-2"><a href="sec:understandingdata.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb1-3"><a href="sec:understandingdata.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="sec:understandingdata.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the internal structure of the R object (= flights)</span></span>
+<span id="cb1-5"><a href="sec:understandingdata.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(flights)</span></code></pre></div>
+<pre><code>## tibble [336,776 × 19] (S3: tbl_df/tbl/data.frame)
+##  $ year          : int [1:336776] 2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...
+##  $ month         : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ day           : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ dep_time      : int [1:336776] 517 533 542 544 554 554 555 557 557 558 ...
+##  $ sched_dep_time: int [1:336776] 515 529 540 545 600 558 600 600 600 600 ...
+##  $ dep_delay     : num [1:336776] 2 4 2 -1 -6 -4 -5 -3 -3 -2 ...
+##  $ arr_time      : int [1:336776] 830 850 923 1004 812 740 913 709 838 753 ...
+##  $ sched_arr_time: int [1:336776] 819 830 850 1022 837 728 854 723 846 745 ...
+##  $ arr_delay     : num [1:336776] 11 20 33 -18 -25 12 19 -14 -8 8 ...
+##  $ carrier       : chr [1:336776] &quot;UA&quot; &quot;UA&quot; &quot;AA&quot; &quot;B6&quot; ...
+##  $ flight        : int [1:336776] 1545 1714 1141 725 461 1696 507 5708 79 301 ...
+##  $ tailnum       : chr [1:336776] &quot;N14228&quot; &quot;N24211&quot; &quot;N619AA&quot; &quot;N804JB&quot; ...
+##  $ origin        : chr [1:336776] &quot;EWR&quot; &quot;LGA&quot; &quot;JFK&quot; &quot;JFK&quot; ...
+##  $ dest          : chr [1:336776] &quot;IAH&quot; &quot;IAH&quot; &quot;MIA&quot; &quot;BQN&quot; ...
+##  $ air_time      : num [1:336776] 227 227 160 183 116 150 158 53 140 138 ...
+##  $ distance      : num [1:336776] 1400 1416 1089 1576 762 ...
+##  $ hour          : num [1:336776] 5 5 5 5 6 5 6 6 6 6 ...
+##  $ minute        : num [1:336776] 15 29 40 45 0 58 0 0 0 0 ...
+##  $ time_hour     : POSIXct[1:336776], format: &quot;2013-01-01 05:00:00&quot; &quot;2013-01-01 05:00:00&quot; ...</code></pre>
+<p>The first line shows the dimension of your data frame<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, and then each of the columns (attributes) and show with their respective datatype.</p>
+<p>Understanding the structure of the dataset is quite useful, since it allows you to get an overview on the available data types. A good understanding of the different data types is an important prerequisite for EDA, because you can use certain statistical measurements only for certain data types. You also need to know which data type you are dealing with in order to choose the right visualization method. Think of data types as a way to categorize different types of variables. We already discussed different types of variables in Section <a href="sec:processdataviz.html#sec:variabletype">2.3.1.3</a>.</p>
+<p>For setting up the pipeline it makes sense to work with a subset only, thus, we sample from the available data 10 percent. Furthermore, I decided to include only those observations that are complete. However, this decision should not be made carelessly.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="sec:understandingdata.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="sec:understandingdata.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="sec:understandingdata.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Select a sample from the whole data set</span></span>
+<span id="cb3-4"><a href="sec:understandingdata.html#cb3-4" aria-hidden="true" tabindex="-1"></a>fly.sample <span class="ot">&lt;-</span> <span class="fu">sample_frac</span>(flights, .<span class="dv">1</span>) <span class="co"># takes a sample of 10 per cent</span></span>
+<span id="cb3-5"><a href="sec:understandingdata.html#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="sec:understandingdata.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensions of the data set</span></span>
+<span id="cb3-7"><a href="sec:understandingdata.html#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(fly.sample) </span></code></pre></div>
+<pre><code>## [1] 33678    19</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="sec:understandingdata.html#cb5-1" aria-hidden="true" tabindex="-1"></a>fly.sample <span class="ot">&lt;-</span> fly.sample[<span class="fu">complete.cases</span>(fly.sample), ]</span>
+<span id="cb5-2"><a href="sec:understandingdata.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(fly.sample)</span></code></pre></div>
+<pre><code>## [1] 32674    19</code></pre>
+</div>
+<div id="scatterplot" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Scatterplot</h3>
+<p>The next step is to get a first overview about the data, and for this, we can use a visualization already. For this I use a simple scatterplot.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="sec:understandingdata.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="sec:understandingdata.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb7-3"><a href="sec:understandingdata.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="sec:understandingdata.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data 1 - Scatterplot</span></span>
+<span id="cb7-5"><a href="sec:understandingdata.html#cb7-5" aria-hidden="true" tabindex="-1"></a>fly.viz1 <span class="ot">&lt;-</span> <span class="fu">rowid_to_column</span>(fly.sample)</span>
+<span id="cb7-6"><a href="sec:understandingdata.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.viz1, <span class="fu">aes</span>(<span class="at">x=</span>rowid, <span class="at">y=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-7"><a href="sec:understandingdata.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Flight ID&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>) </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label3"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label3-1.png" alt="Scatterplot of delay times." width="384" />
+<p class="caption">
+FIGURE3.2: Scatterplot of delay times.
+</p>
+</div>
+<p>This is not very informative because this plot is not structured. However, let us reflect about the visualization for a moment. A scatterplot encodes two quantitative variables using both the vertical and horizontal spatial position channels., and the mark type is necessarily a point. They are highly effective for judging the correlation between two attributes. Scatterplots are often augmented with color coding to show an additional attribute. We talk about these characteristics in detail again.</p>
+<table>
+<caption>Characteristics of a scatterplot <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span></caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Idiom</th>
+<th>Scatterplot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What: Data</td>
+<td>Table: two quantitative value attributes.</td>
+</tr>
+<tr class="even">
+<td>How: Encode</td>
+<td>Express values with horizontal and vertical spatial position and point marks</td>
+</tr>
+<tr class="odd">
+<td>Why: Task</td>
+<td>Find trends, outliers, distribution, correlation; locate clusters.</td>
+</tr>
+<tr class="even">
+<td>Scale</td>
+<td>Items: hundreds</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s sort the values and change the graphical representation to make it easier to see.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="sec:understandingdata.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Scatterplot with ordered values</span></span>
+<span id="cb8-2"><a href="sec:understandingdata.html#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="sec:understandingdata.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;arrange&#39; sorts a variable, here dep_delay, in descending order</span></span>
+<span id="cb8-4"><a href="sec:understandingdata.html#cb8-4" aria-hidden="true" tabindex="-1"></a>fly.viz2 <span class="ot">&lt;-</span> <span class="fu">arrange</span>(fly.sample, fly.sample<span class="sc">$</span>dep_delay)</span>
+<span id="cb8-5"><a href="sec:understandingdata.html#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="sec:understandingdata.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># create new column with row numbers</span></span>
+<span id="cb8-7"><a href="sec:understandingdata.html#cb8-7" aria-hidden="true" tabindex="-1"></a>fly.viz2 <span class="ot">&lt;-</span> <span class="fu">rowid_to_column</span>(fly.viz2)</span>
+<span id="cb8-8"><a href="sec:understandingdata.html#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="sec:understandingdata.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.viz2, <span class="fu">aes</span>(<span class="at">x=</span>rowid, <span class="at">y=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">&quot;Ordered Flight ID&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>)  </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label4"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label4-1.png" alt="Second scatterplot of delay times." width="384" />
+<p class="caption">
+FIGURE3.3: Second scatterplot of delay times.
+</p>
+</div>
+<p>What do you think of this chart? What can you say about flight delay times now? In the following, we focus on the delays only, since many flights seems to be one time.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="sec:understandingdata.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove all flights with no delay</span></span>
+<span id="cb9-2"><a href="sec:understandingdata.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(fly.sample)</span></code></pre></div>
+<pre><code>## [1] 32674    19</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="sec:understandingdata.html#cb11-1" aria-hidden="true" tabindex="-1"></a>fly.sample <span class="ot">&lt;-</span> <span class="fu">subset</span>(fly.sample, dep_delay<span class="sc">&gt;</span><span class="dv">0</span>)</span>
+<span id="cb11-2"><a href="sec:understandingdata.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="sec:understandingdata.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(fly.sample)</span></code></pre></div>
+<pre><code>## [1] 12843    19</code></pre>
+</div>
+<div id="histogram" class="section level3" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Histogram</h3>
+<p>Let’s now create a graphical summary of these variables. Let’s start with a histogram. It divides the range of the dep_delay attribute into equal-sized bins and then plots the number of observations within each bin. What additional information does this new visualization give us about this variable?</p>
+<p>The idiom of histograms shows the distribution of elements within an attribute. In the example, you can see a histogram of the weight distribution for all cats in a neighborhood, binned into 5-pound ranges.</p>
+<p>The visual coding of a histogram is very similar to bar charts, with a line marker. One difference is that histograms are sometimes displayed with no space between bars to visually imply continuity, while bar charts conversely have spaces between bars to imply discretization. Despite their visual similarity, histograms are very different from bar charts. They do not show the original data but aggregate it.</p>
+<p>The number of bins in the histogram can be chosen independently of the number of elements in the data set. The choice of bin size is crucial and tricky: a histogram can look very different depending on the discretization chosen. One possible solution to the problem is to calculate the number of bins based on the features of the data set; another is to provide controls for the user to interactively change the number of bins and see how the histogram changes.</p>
+<table>
+<caption>Characteristics of a histogram <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span></caption>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Idiom</th>
+<th>Histogram</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What: Data</td>
+<td>Table: one quantitative value attribute.</td>
+</tr>
+<tr class="even">
+<td>What: Derived</td>
+<td>Derived table: one derived ordered key attribute (bin), one derived quantitative value attribute (item count per bin).</td>
+</tr>
+<tr class="odd">
+<td>How: Encode</td>
+<td>Rectilinear Layout. Line mark with aligned position to express derived value attribute. Position: key attribute.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="sec:understandingdata.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Histogram</span></span>
+<span id="cb13-2"><a href="sec:understandingdata.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.sample, <span class="fu">aes</span>(<span class="at">x=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb13-3"><a href="sec:understandingdata.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Number of Flights&quot;</span>)  </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label6"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label6-1.png" alt="Histogram of Delay Times." width="384" />
+<p class="caption">
+FIGURE3.4: Histogram of Delay Times.
+</p>
+</div>
+<p>In the standard function the number of bins are 30, but of course, you can change them easily. The choice of binwidth significantly affects the resulting plot. Smaller binwidths can make the plot cluttered, but larger binwidths may obscure nuances in the data.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="sec:understandingdata.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Change the size of the bins</span></span>
+<span id="cb14-2"><a href="sec:understandingdata.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.sample, <span class="fu">aes</span>(<span class="at">x=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)  <span class="sc">+</span></span>
+<span id="cb14-3"><a href="sec:understandingdata.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Number of Flights&quot;</span>)</span>
+<span id="cb14-4"><a href="sec:understandingdata.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="sec:understandingdata.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.sample, <span class="fu">aes</span>(<span class="at">x=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>)  <span class="sc">+</span></span>
+<span id="cb14-6"><a href="sec:understandingdata.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Number of Flights&quot;</span>)</span>
+<span id="cb14-7"><a href="sec:understandingdata.html#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="sec:understandingdata.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.sample, <span class="fu">aes</span>(<span class="at">x=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb14-9"><a href="sec:understandingdata.html#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Number of Flights&quot;</span>)</span>
+<span id="cb14-10"><a href="sec:understandingdata.html#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="sec:understandingdata.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.sample, <span class="fu">aes</span>(<span class="at">x=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb14-12"><a href="sec:understandingdata.html#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Number of Flights&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:chunk-label7"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label7-1.png" alt="Histogram of Delay Times." width="50%" /><img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label7-2.png" alt="Histogram of Delay Times." width="50%" /><img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label7-3.png" alt="Histogram of Delay Times." width="50%" /><img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label7-4.png" alt="Histogram of Delay Times." width="50%" />
+<p class="caption">
+FIGURE3.5: Histogram of Delay Times.
+</p>
+</div>
+</div>
+<div id="density-plot" class="section level3" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Density Plot</h3>
+<p>A Density Plot is a smoothed, continuous version of a histogram that visualizes the underlying probability distribution of the data by a continuous curve<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>. The peaks of a Density Plot help display where values are concentrated over the interval. The most common form of estimation is known as <a href="https://en.wikipedia.org/wiki/Kernel_density_estimation">kernel density estimation</a>. In this method, a continuous curve (the kernel) is drawn at every individual data point and all of these curves are then added together to make a single smooth density estimation. The kernel most often used is a Gaussian (which produces a Gaussian bell curve at each data point).</p>
+<!--A good explanation, how the density estimation works in general is given on [Wikipedia](https://en.wikipedia.org/wiki/Kernel_density_estimation#Example). -->
+<p>Just as is in the case with histograms, the exact visual appearance of a density plot depends on the kernel and bandwidth choices. In addition, the choice of the kernel affects the shape of the density curve.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="sec:understandingdata.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Density Plot</span></span>
+<span id="cb15-2"><a href="sec:understandingdata.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.viz2, <span class="fu">aes</span>(<span class="at">x=</span>dep_delay)) <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="sec:understandingdata.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color=</span><span class="st">&quot;darkblue&quot;</span>, <span class="at">fill=</span><span class="st">&quot;lightblue&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb15-4"><a href="sec:understandingdata.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Departure delay (in min)&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label8"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label8-1.png" alt="Density Plot of Delay Times." width="384" />
+<p class="caption">
+FIGURE3.6: Density Plot of Delay Times.
+</p>
+</div>
+</div>
+<div id="boxplot" class="section level3" number="3.2.6">
+<h3><span class="header-section-number">3.2.6</span> Boxplot</h3>
+<p>Another alternative to display the distribution of a continuous variable broken down by a categorical variable is the Boxplot. The boxplot is an idiom presenting summary statistics for the distribution of a quantitative attribute, using five derived values (cp. Figure ??).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="images/boxplot.png" alt="Properties of a Boxplot" width="100%" />
+<p class="caption">
+FIGURE3.7: Properties of a Boxplot
+</p>
+</div>
+<p>A box that extends from the <em>25th percentile</em> (lower quartile, Q1) of the distribution to the <em>75th percentile</em> (higher quartile, Q3), a distance called the <em>interquartile range</em> (IQR). In the center of the box is a line indicating the <em>median</em>, or 50th percentile, of the distribution. These three lines give you an idea of the spread of the distribution and whether the distribution is symmetrical about the median or skewed to one side. Furthermore, a line (or whisker) extending from each end of the box to the furthest non-outlier point (Q1-1.5 x IRQ and Q3+1.5 x IRQ) in the distribution which indicates the <em>range</em>. Visual points indicating observations that fall more than 1.5 times the IQR from each edge of the box. These outer points are unusual, so they are plotted individually.</p>
+<p>Boxplots are useful when we want to visualize many distributions at once and/or if we are primarily interested in overall shifts among the distributions.</p>
+<table>
+<caption>Characteristics of a boxplot <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span></caption>
+<colgroup>
+<col width="26%" />
+<col width="73%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Idiom</th>
+<th>Boxplot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What: Data</td>
+<td>Table: many quantitative value attributes.</td>
+</tr>
+<tr class="even">
+<td>What:Derived</td>
+<td>Five quantitative attributes for each original attribute, representing its distribution.</td>
+</tr>
+<tr class="odd">
+<td>Why: Task</td>
+<td>Characterize distribution; find others, extremes, averages; identify skew.</td>
+</tr>
+<tr class="even">
+<td>How: Encode</td>
+<td>One glyph per original attribute expressing derived attribute values using vertical spatial position, with 1D list alignment of glyphs into separated with horizontal spatial position.</td>
+</tr>
+<tr class="odd">
+<td>How: Reduce</td>
+<td>Item aggregation.</td>
+</tr>
+<tr class="even">
+<td>Scale</td>
+<td>Items: unlimited. Attributes: dozens.</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sec:understandingdata.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Box Plot </span></span>
+<span id="cb16-2"><a href="sec:understandingdata.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.viz2, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&#39;&#39;</span>,<span class="at">y=</span>dep_delay)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label9"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label9-1.png" alt="Boxplot of Delay Times." width="384" />
+<p class="caption">
+FIGURE3.8: Boxplot of Delay Times.
+</p>
+</div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="sec:understandingdata.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Box Plot with log scale</span></span>
+<span id="cb17-2"><a href="sec:understandingdata.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the function mutate() adds new variables and preserves existing ones</span></span>
+<span id="cb17-3"><a href="sec:understandingdata.html#cb17-3" aria-hidden="true" tabindex="-1"></a>fly.viz2 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fly.viz2, <span class="at">min_delay=</span><span class="fu">min</span>(fly.viz2<span class="sc">$</span>dep_delay, <span class="at">na.rm=</span><span class="cn">TRUE</span>)) </span>
+<span id="cb17-4"><a href="sec:understandingdata.html#cb17-4" aria-hidden="true" tabindex="-1"></a>fly.viz2 <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fly.viz2, <span class="at">log_dep_delay =</span> <span class="fu">log</span>(fly.viz2<span class="sc">$</span>dep_delay <span class="sc">-</span> fly.viz2<span class="sc">$</span>min_delay)) </span>
+<span id="cb17-5"><a href="sec:understandingdata.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.viz2, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&#39;&#39;</span>, <span class="at">y=</span>log_dep_delay)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label10"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label10-1.png" alt="Boxplot of Delay Times (log scale)." width="384" />
+<p class="caption">
+FIGURE3.9: Boxplot of Delay Times (log scale).
+</p>
+</div>
+</div>
+<div id="compare-distributions" class="section level3" number="3.2.7">
+<h3><span class="header-section-number">3.2.7</span> Compare Distributions</h3>
+<p>Now we can start looking at the relationship between pairs of attributes. That is, how are each of the distributional properties we care about (central trend, spread and skew) of the values of an attribute changing based on the value of a different attribute. Suppose we want to see the relationship between departure delay time (a numeric variable), and the airport origin (a categorical variable).</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="sec:understandingdata.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Box Plot in groups</span></span>
+<span id="cb18-2"><a href="sec:understandingdata.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fly.viz2, <span class="fu">aes</span>(<span class="at">x=</span>origin, <span class="at">y=</span>log_dep_delay)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a href="sec:understandingdata.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Delay Times (in min)&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label11"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label11-1.png" alt="Multiple Boxplots of Delay Times depending on airport origine." width="384" />
+<p class="caption">
+FIGURE3.10: Multiple Boxplots of Delay Times depending on airport origine.
+</p>
+</div>
+</div>
+</div>
+<div id="summary-statistics" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Summary Statistics</h2>
+<p>Let’s continue our discussion of exploratory data analysis. In the previous section, we saw ways to visualize attributes (variables) using graphs to begin understanding the properties of the data distribution, an essential and preliminary step in data analysis. In this section, we begin discussing statistical or numerical summaries of data to quantify properties we have observed using visual summaries and plots. Remember that one purpose of EDA is to identify problems in data and understand variable properties. We also want to use EDA to understand the relationship between pairs of variables, such as their correlation or covariance.</p>
+<p>We differentiate measures of central tendency, i.e., measures of location that describe a tendency of data to center about certain numerical value. Here we have mode, median, and mean. Then we have measures of variability, i.e., dispersion that describe the spread of the data across possible values. To this group the range, interquartile range, variance, and standard deviation belong to. Finally we have measures of shape that relate to the form of the distribution, its skewness.</p>
+<!-- https://bookdown.org/yih_huynh/Guide-to-R-Book/diamonds.html -->
+<p>In this chapter, we use the diamond data set, that contains the prices, carat, color and other attributes of almost 54,000 diamonds.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="sec:understandingdata.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(skimr)</span></span>
+<span id="cb19-2"><a href="sec:understandingdata.html#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="sec:understandingdata.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># load dataset and show structure</span></span>
+<span id="cb19-4"><a href="sec:understandingdata.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
+<span id="cb19-5"><a href="sec:understandingdata.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#skim(diamonds)</span></span>
+<span id="cb19-6"><a href="sec:understandingdata.html#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="sec:understandingdata.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">#show attributes only</span></span>
+<span id="cb19-8"><a href="sec:understandingdata.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(diamonds)</span></code></pre></div>
+<pre><code>##  [1] &quot;carat&quot;   &quot;cut&quot;     &quot;color&quot;   &quot;clarity&quot; &quot;depth&quot;   &quot;table&quot;   &quot;price&quot;  
+##  [8] &quot;x&quot;       &quot;y&quot;       &quot;z&quot;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="sec:understandingdata.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count frequencies</span></span>
+<span id="cb21-2"><a href="sec:understandingdata.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(diamonds<span class="sc">$</span>cut)</span></code></pre></div>
+<pre><code>## 
+##      Fair      Good Very Good   Premium     Ideal 
+##      1610      4906     12082     13791     21551</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="sec:understandingdata.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Counts proportions</span></span>
+<span id="cb23-2"><a href="sec:understandingdata.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(diamonds<span class="sc">$</span>cut))</span></code></pre></div>
+<pre><code>## 
+##       Fair       Good  Very Good    Premium      Ideal 
+## 0.02984798 0.09095291 0.22398962 0.25567297 0.39953652</code></pre>
+<!-- Might be a better example: https://r4ds.had.co.nz/exploratory-data-analysis.html#patterns-and-models -->
+<p>Part of our goal is to understand how the variables are distributed in a given data set. Again, note that we are not using distribution in a formal mathematical (or probabilistic) sense. All the statements we make here are based on the data at hand, so we might call this an empirical distribution of data. Empirical is used here in the sense that it is data resulting from an experiment. Let’s take a data set on the properties of diamonds as an example.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="sec:understandingdata.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensions of the data set</span></span>
+<span id="cb25-2"><a href="sec:understandingdata.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x=</span>depth)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label13"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label13-1.png" alt="Distribution of Depth in the Diamonds Data Set." width="384" />
+<p class="caption">
+FIGURE3.11: Distribution of Depth in the Diamonds Data Set.
+</p>
+</div>
+<div id="central-tendency" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Central Tendency</h3>
+<p>Now that we know the area over which the data is distributed, we can figure out an initial summary of the data over that area. Let’s start with the center of the data:</p>
+<p>The median is a statistic defined such that half of the data has a smaller value. We can use the notation <code>x(n/2)</code> (a rank statistic) to represent the median.</p>
+<p>Note that we can use an algorithm based on the quicksort partition scheme to compute the median in linear time (on average).</p>
+<p><span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_{i}\)</span>.</p>
+<p>Where is the mean in our example dataset?</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="sec:understandingdata.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># determine median</span></span>
+<span id="cb26-2"><a href="sec:understandingdata.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x=</span>depth)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">100</span>) <span class="sc">+</span> <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept=</span><span class="fu">median</span>(depth)), <span class="at">color=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label14"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label14-1.png" alt="Show Mean in Distribution of Depth in the Diamonds Data Set." width="384" />
+<p class="caption">
+FIGURE3.12: Show Mean in Distribution of Depth in the Diamonds Data Set.
+</p>
+</div>
+<p>Now that we have a measure of the center, we can now discuss how the data is distributed around that center.</p>
+</div>
+<div id="median-and-iqr" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Median, and IQR</h3>
+<p>Median is better measure of central tendency than the mean when we have outliers or/and skewed distribution, e.g., income, housing prices, waiting time. It is the middle observation when data is sorted in the order of magnitude. Thus (about) 50 % of observations are smaller and (about) 50 % are larger than the median. In our dataset:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="sec:understandingdata.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># min and max value</span></span>
+<span id="cb27-2"><a href="sec:understandingdata.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(diamonds, <span class="at">min_depth =</span> <span class="fu">min</span>(diamonds<span class="sc">$</span>depth), <span class="at">max_depth =</span> <span class="fu">max</span>(diamonds<span class="sc">$</span>depth))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##   min_depth max_depth
+##       &lt;dbl&gt;     &lt;dbl&gt;
+## 1        43        79</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="sec:understandingdata.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mean vs. median</span></span>
+<span id="cb29-2"><a href="sec:understandingdata.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(diamonds, <span class="at">mean_depth =</span> <span class="fu">mean</span>(diamonds<span class="sc">$</span>depth), <span class="at">median_depth =</span> <span class="fu">median</span>(diamonds<span class="sc">$</span>depth))</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##   mean_depth median_depth
+##        &lt;dbl&gt;        &lt;dbl&gt;
+## 1       61.7         61.8</code></pre>
+<p>For the mean, we have a convenient way to describe this: the average distance (using the squared difference) from the mean. We call this the variance of the data. vhe Variance is a commonly used statistic for dispersion, but it has the disadvantage that its units are not easily conceptualized (e.g., squared diamond depth).</p>
+<p><span class="math inline">\(sd(x) = \frac{1}{n} \sum_{i-1}^n (x_i-\bar{x})^2\)</span></p>
+<p>A scatter statistic that is in the same units as the data is the standard deviation, which is just the square root of the variance:</p>
+<p><span class="math inline">\(var(x) = \sqrt{\frac{1}{n} \sum_{i-1}^n (x_i-\bar{x})^2}\)</span></p>
+<p>We can also use standard deviations as an interpretable unit for how far a particular data point is from the mean. This is often use in tables.</p>
+<p>Just like we saw how the median is a rank statistic used to describe central tendency, we can also use rank statistics to describe spread.
+For this we use two more rank statistics: the first and third quartiles, x(n/4) and x(3n/4) respectively. We know this already, it is the interquartile range. Also called midspread and is the difference between third and first quartiles (spread in the middle 50%).
+It is not affected by extreme values.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="sec:understandingdata.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rang</span></span>
+<span id="cb31-2"><a href="sec:understandingdata.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(diamonds<span class="sc">$</span>depth)</span></code></pre></div>
+<pre><code>## [1] 43 79</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="sec:understandingdata.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variance</span></span>
+<span id="cb33-2"><a href="sec:understandingdata.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(diamonds<span class="sc">$</span>depth)</span></code></pre></div>
+<pre><code>## [1] 2.052404</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="sec:understandingdata.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#standard deviation</span></span>
+<span id="cb35-2"><a href="sec:understandingdata.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(diamonds<span class="sc">$</span>depth)</span></code></pre></div>
+<pre><code>## [1] 1.432621</code></pre>
+</div>
+<div id="outliers" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Outliers</h3>
+<p>There is no precise way to define and identify outliers. Instead, a subject matter expert must interpret the raw observations and decide whether or not a value is an outlier.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="sec:understandingdata.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(outliers)</span>
+<span id="cb37-2"><a href="sec:understandingdata.html#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="sec:understandingdata.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine outlier (Finds value with largest difference between it and sample mean, which can be an outlier.)</span></span>
+<span id="cb37-4"><a href="sec:understandingdata.html#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">outlier</span>(diamonds<span class="sc">$</span>depth)</span></code></pre></div>
+<pre><code>## [1] 43</code></pre>
+<p>However, we can use estimates of dispersion to identify outlier values in a data set. If we make an estimate of dispersion based on the techniques we have just seen, we can identify values that are unusually far from the center of the distribution. Although this method works relatively well in practice, it presents a fundamental problem. Severe outliers can significantly affect standard deviation-based spread estimates. In particular, the spread estimates are inflated in the presence of severe outliers. To circumvent this problem, we use rank-based spread estimates to identify outliers as such:
+<span class="math inline">\(outliers_{sd}(x)= \{x_i||x_j|&gt;\bar{x}+k \times sd(x)\}\)</span></p>
+<p>To mitigate the effect of severe outliers you can use rank-based estimates of spread to identify outliers as:</p>
+<p><span class="math inline">\(\mbox{outliers}_{IQR}(x)= \{x_j|x_j &lt; x_{(1/4)} - k \times IQR(x) \mbox{ or } x_j &gt; x_{(3/4)} + k \times IQR(x) \}\)</span></p>
+<p>This is usually referred to as the Tukey outlier rule, where the multiplier k plays the same role as before. We use IQR here because it is less prone to inflating due to severe outliers in the data set. It also works better for skewed data than the standard deviation based method.</p>
+<div class="figure"><span style="display:block;" id="fig:chunk-label17a"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label17a-1.png" alt="Spread of Depth in the Diamonds Data Set." width="384" />
+<p class="caption">
+FIGURE3.13: Spread of Depth in the Diamonds Data Set.
+</p>
+</div>
+<p>When does it make sense to remove outliers?
+<!-- taken from https://statisticsbyjim.com/basics/remove-outliers/ --></p>
+<p>Well, it depends. As you can see in this visualization, removing outliers can distort your analyses by removing important information from the dataset. However, you have to make an informed decision what to do with them because removing outliers is legitimate only for specific reasons. Outliers can provide very interesting information about the subject-area and data collection process. It’s essential to understand how outliers occur and whether they might happen again as a normal part of the process or study area. You might be tempted to simply remove outliers to decrease the variability in your data and therefore the increases statistical power, which makes your results to become statistically significant. These temptation might be a reason for the reproducibility crisis in psychology and other disciplines.
+<!-- hypothesis! please check out --></p>
+</div>
+<div id="skewness" class="section level3" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Skewness</h3>
+<p>One final thought. Although there are formal ways to define this precisely, the five-number summary can be used to understand if data are biased. How?</p>
+<p>If one of these differences is larger than the other, then it suggests that this data set may be skewed, meaning that the range of data on one side of the median is longer (or shorter) than the range of data on the other side of the median. Do you think our diamond depth data set is biased?</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="sec:understandingdata.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span>
+<span id="cb39-2"><a href="sec:understandingdata.html#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="sec:understandingdata.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb39-4"><a href="sec:understandingdata.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(diamonds<span class="sc">$</span>depth)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   43.00   61.00   61.80   61.75   62.50   79.00</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="sec:understandingdata.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Skewness</span></span>
+<span id="cb41-2"><a href="sec:understandingdata.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(diamonds<span class="sc">$</span>depth)</span></code></pre></div>
+<pre><code>## [1] -0.08229174</code></pre>
+<p>The skewness of the data is negative, thus, we can conclude that the data are close to bell shape but slightly skewed to the left.</p>
+<p>For pairs of continuous variables, the most useful visualization is the scatter plot. This gives an idea of how a variable varies (in terms of central trend, variance and skewness) depending on another variable. A scatter plot can be used to show relationship between <code>price</code> and <code>carrat</code>.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="sec:understandingdata.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize Data - Scatterplot</span></span>
+<span id="cb43-2"><a href="sec:understandingdata.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x=</span>price, <span class="at">y=</span>carat)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label11-1"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label11-1-1.png" alt="Scatterplot of Price Depending On Carat" width="384" />
+<p class="caption">
+FIGURE3.14: Scatterplot of Price Depending On Carat
+</p>
+</div>
+<p>As we expected, there seem to be a relationsship between price and carrat, which brings us to the next question.</p>
+</div>
+<div id="covariance-and-correlation" class="section level3" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Covariance and Correlation</h3>
+<!-- https://bookdown.org/ronsarafian/IntrotoDS/eda.html#summary-statistics 
+http://lipas.uwasa.fi/~sjp/Teaching/Bs/Lectures/BasicStatistics.html -->
+<p>As you have learned, the scatterplot is a visual method for observing relationships between pairs of variables.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="sec:understandingdata.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Covariance and correlation</span></span>
+<span id="cb44-2"><a href="sec:understandingdata.html#cb44-2" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="sec:understandingdata.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price)) <span class="sc">+</span></span>
+<span id="cb44-4"><a href="sec:understandingdata.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb44-5"><a href="sec:understandingdata.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept =</span> <span class="fu">mean</span>(price)), <span class="at">color=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb44-6"><a href="sec:understandingdata.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(carat)), <span class="at">color=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label19"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label19-1.png" alt="Covariance and correlation." width="384" />
+<p class="caption">
+FIGURE3.15: Covariance and correlation.
+</p>
+</div>
+<p>However, how do we quantitatively summarize the relationship between two variables. We need to extend our notion of scatter (or variation of data around the mean) to the notion of covariation: do pairs of variables vary around the mean in the same way or more precisly, does x~i vary in the same direction and on the same scale away from its mean as y~i?</p>
+<p>This leads to covariance:
+<span class="math inline">\(cov(x,y =\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})(y_i -\bar{y})\)</span></p>
+<p>Correlation (formally, Pearson’s correlation coefficient) summarizes the same relationship in a unit-less way:</p>
+<p><span class="math inline">\(r(x,y)=\frac{con(x,y)}{sd(x)sd(y)}\)</span></p>
+<p>Correlation evaluates the direction as well as strength of a relationship between continuous variables. The correlation coefficient can range from -1 to +1, which signifies strong negative to strong positive relation between the variables.</p>
+<p>You can think of the correlation as the covariance between x and y after transforming each to the unitless scale of z-scores. Just to recall, a z-score of a sample x is defined as the mean-centered, scale normalized observations: <span class="math inline">\(z_i(x)=\frac{x_i-\bar{x}}{sd(x)}\)</span>, thus <span class="math inline">\(r(x,y)=Cov(z(x),z(y))\)</span>.</p>
+</div>
+<div id="correlation-matrix" class="section level3" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Correlation Matrix</h3>
+<!--https://rkabacoff.github.io/datavis/Models.html
+https://www.displayr.com/what-is-a-correlation-matrix/ 
+https://bookdown.org/ronsarafian/IntrotoDS/eda.html#summary-statistics-->
+<p>The covariance is a simple summary of association between two variables, but it certainly may not capture the whole “story” when dealing with more than two variables. The most common summary of multivariate relation, is the covariance matrix, but we warn that only the simplest multivariate relations are fully summarized by this matrix.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="sec:understandingdata.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation Matrix (less meaningful example - just a showcase)</span></span>
+<span id="cb45-2"><a href="sec:understandingdata.html#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="sec:understandingdata.html#cb45-3" aria-hidden="true" tabindex="-1"></a>diamonds_corr <span class="ot">&lt;-</span> <span class="fu">cor</span>(diamonds[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>)])</span>
+<span id="cb45-4"><a href="sec:understandingdata.html#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="sec:understandingdata.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print mcor and round to 2 digits</span></span>
+<span id="cb45-6"><a href="sec:understandingdata.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(diamonds_corr, <span class="at">digits=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##       carat depth table price
+## carat  1.00  0.03  0.18  0.92
+## depth  0.03  1.00 -0.30 -0.01
+## table  0.18 -0.30  1.00  0.13
+## price  0.92 -0.01  0.13  1.00</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="sec:understandingdata.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load visualization from package</span></span>
+<span id="cb47-2"><a href="sec:understandingdata.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb47-3"><a href="sec:understandingdata.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(diamonds_corr)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:chunk-label20"></span>
+<img src="Data-Vizualization---From-a-Human-Centered-Design-Perspective--Lecture-Notes-_files/figure-html/chunk-label20-1.png" alt="Correlation Matrix." width="384" />
+<p class="caption">
+FIGURE3.16: Correlation Matrix.
+</p>
+</div>
+</div>
+</div>
+<div id="general-guidelines-for-eda" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> General Guidelines for EDA</h2>
+<p>It is difficult to say, what the best process is in EDA. I just provided a number of analyses and possible visualizations. You find many alternative suggestions, and I provide one of them:</p>
+<ul>
+<li>Begin with a discussion of the “center” of the data, generally based on mean.</li>
+<li>Describes how data are distributed.</li>
+<li>Follow with a discussion of variability (and of skew if appropriate).</li>
+<li>End with a summary evaluation which may have a subjective component (numbers must be interpreted, they don’t speak for themselves).</li>
+<li>Make sure to use numbers in a description wisely – not too few or too many.</li>
+</ul>
+<p>However, each dataset is very special, thus, as often it stays to be an individualized process. Therefore, reproducibility is very important during EDA. Computational notebooks such as R Markdown (used here), but also Jupyter notebooks (used in our exercise), Observable (google product) support readability and understandability of your exploration process. This supports <a href="https://en.wikipedia.org/wiki/Literate_programming">Knuth’s vision of literate programming</a>.</p>
+</div>
+<div id="tools-and-libraries-for-data-exploration" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Tools and Libraries for Data Exploration</h2>
+<p>Besides GNY R there are many tools and libraries that support the process of data exploration. In this section, I provide a selection.</p>
+<!-- create table with tools -->
+<p>Wrangler provides data-transformation scripts within a visual, direct manipulation interface augmented by predictive models <span class="citation">(<a href="#ref-kandel2011wrangler" role="doc-biblioref">Kandel et al. 2011</a>)</span>. Wrangler is an interactive system for creating data transformations. It uses semantic data types, such as geographic locations, dates, classification codes to support the validation of data and the type conversion. Interactive histories support review, refinement, and annotation of transformation scripts. The researchers provide a WebApp but also a <a href="https://www.trifacta.com/start-wrangling/">commercial product</a>.</p>
+<p>A similar approach is realized by <a href="https://openrefine.org/">Open Refine</a>. This tool was formerly developed by Google but it is now maintained by the open source community. It allows you to clean data, transform it from one format into another, or extend you data by additional data from an API.</p>
+<p>Besides DataWrangler, I would like to mention the tool Voyager <span class="citation">(<a href="#ref-wongsuphasawat2015voyager" role="doc-biblioref">Wongsuphasawat et al. 2015</a>)</span>. The Voyager system is specifically suitable for exploratory visual analysis. You can again test it via a <a href="https://vega.github.io/voyager/">WebApp</a> and the source code is available on <a href="https://github.com/vega/voyager">Github</a>. And for the sake of completeness, there is also a commercial software <a href="https://www.tableau.com/">Tableau</a>, which can be freely used in the educational context.</p>
+<p>Both, Data Wrangler and Voyager are using a formal language - the Vega-Lite visualization grammar. Vega-Lite is a high-level grammar of interactive graphics that provides a concise, declarative JSON syntax to create diagrams for data analysis and presentation. Vega-Lite specifications describe visualizations as ``encoding mappings’’ from data to properties of graphical marks (e.g., points or bars).</p>
+<p>The Vega-Lite compiler automatically produces visualization components including axes, legends, and scales. Vega-Lite supports both data transformations (e.g., aggregation, binning, filtering, sorting) and visual transformations (e.g., stacking and faceting). Moreover, Vega-Lite specifications can be composed into layered and multi-view displays, and made interactive with selections as you can see in the example.</p>
+<p>Vega-Lite is being used in another interesting library. On top of the Vega-Lite JSON specification a simple API was built: Altair. It is a declarative statistical visualization library for Python. <a href="https://github.com/altair-viz/altair">Source code</a> and a comprehensive <a href="https://altair-viz.github.io/">documentation</a> as well as <a href="github.com/altair-viz/altair_notebooks">Tutorial Notebooks</a> are available on Github.</p>
+<!--  In der Wahrscheinlichkeitstheorie betrachten wir einen zugrundeliegenden Prozess, der eine gewisse Zufälligkeit oder Unsicherheit aufweist, die durch Zufallsvariablen modelliert wird, und wir finden heraus, was passiert. 
+
+In der Statistik beobachten wir etwas, das passiert ist, und versuchen herauszufinden, welcher zugrunde liegende Prozess diese Beobachtungen erklären würde.
+
+Statistik ist eng mit der Wahrscheinlichkeitstheorie verbunden. Mit Hilfe der Statistik können Sie die Wahrscheinlichkeit, die Chance, dass ein bestimmtes Ereignis eintritt, ausrechnen: Wenn Sie wissen wollen, wie hoch die Wahrscheinlichkeit ist, dass Ihr Ferienflugzeug abstürzt, denken Sie daran, wie viele Flugzeuge in der Regel innerhalb eines Jahres abstürzen. Da diese Zahl sehr klein ist, folgern Sie, dass die Wahrscheinlichkeit, dass Ihr Flugzeug abstürzt, ebenfalls gering ist. Sie haben eine sehr einfache statistische Analyse der Daten über Flugzeugabstürze durchgeführt und daraus eine Wahrscheinlichkeit berechnet.
+
+Aber die Dinge funktionieren auch umgekehrt: Sie können abstrakte Wahrscheinlichkeiten verwenden, um Ihnen bei Ihren Statistiken zu helfen. Sagen Sie zum Beispiel, Sie wollen testen, ob ein Würfel, der in einem Casino verwendet wird, fair ist. Dazu werfen Sie den Würfel sehr oft und zeichnen die Ergebnisse auf. Dann argumentieren Sie wie folgt: Wenn der Würfel fair ist, dann sollte jede Zahl gleich wahrscheinlich sein. Es gibt sechs Zahlen, also sollte jede Zahl in 1/6 der Fälle auftauchen. Sie vergleichen den tatsächlichen Würfel mit einem idealen Würfel: Wenn Ihr Casinowürfel Ihnen in etwa 1/6 aller Würfe jede Zahl liefert, entscheiden Sie, dass es fair ist.
+
+Die Wahrscheinlichkeitstheorie ist wichtig, wenn es um die Auswertung von Statistiken geht. Wenn Sie in einer Meinungsumfrage feststellen, dass 80% der Befragten den derzeitigen Premierminister mögen, ist die Versuchung groß, daraus zu schließen, dass der Premierminister sehr beliebt ist. Aber woher wissen Sie, dass Ihr Ergebnis nicht nur zufällig zustande gekommen ist? Nun, Sie verwenden die Wahrscheinlichkeitstheorie, um die Wahrscheinlichkeit zu berechnen, dass Ihr Ergebnis zufällig zustande gekommen ist - wenn diese Wahrscheinlichkeit sehr gering ist, dann sollten Sie zu dem Schluss kommen, dass der Premierminister sehr beliebt ist.
+
+Statistics is the branch of mathematics that transforms data into useful information for decision makers
+
+Statistics is the art of understanding and learning from data
+
+Involves
+Collecting data
+Presenting and describing data
+Analyzing and interpreting data
+
+Data are facts that we consider worth collecting, summarizing, analyzing, and interpreting
+
+Data sets are data collected for a particular study or analysis
+
+Unit of analysis is a person, thing, transaction, or event that can be separately and uniquely identified and about which we want to collect data
+Person (student, customer, programmer, ...)
+Thing (education, power plant, ...)
+Transaction (sale, cost of a software license, monthly rent, ...)
+Event (application, election)
+
+Variable is a characteristic, an attribute, or an occurrence observed for each unit of analysis
+
+Examples
+Unit of analysis: a computer science student
+Variables: gender, age, studentID
+
+-->
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Aamodt, Agnar, and Mads Nygård. 1995. <span>“Different Roles and Mutual Dependencies of Data, Information, and Knowledge—an AI Perspective on Their Integration.”</span> <em>Data &amp; Knowledge Engineering</em> 16 (3): 191–222.
+</div>
+<div class="csl-entry">
+D’ignazio, Catherine, and Lauren F Klein. 2020. <em>Data Feminism</em>. MIT press.
+</div>
+<div class="csl-entry">
+Fry, Ben. 2008. <em>Visualizing Data: Exploring and Explaining Data with the Processing Environment</em>. O’Reilly Media, Inc.
+</div>
+<div class="csl-entry">
+Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2018. <span>“Datasheets for Datasets.”</span> <em>arXiv.org</em> cs.DB (March). <a href="http://arxiv.org/abs/1803.09010v7">http://arxiv.org/abs/1803.09010v7</a>.
+</div>
+<div class="csl-entry">
+Haraway, Donna. 1988. <span>“Situated Knowledges: The Science Question in Feminism and the Privilege of Partial Perspective.”</span> <em>Feminist Studies</em> 14 (3): 575–99.
+</div>
+<div class="csl-entry">
+Holland, Sarah, Ahmed Hosny, Sarah Newman, Joshua Joseph, and Kasia Chmielinski. 2018. <span>“The Dataset Nutrition Label - a Framework to Drive Higher Data Quality Standards.”</span> <em>CoRR</em> cs.DB (January). <a href="http://arxiv.org/abs/1805.03677v1">http://arxiv.org/abs/1805.03677v1</a>.
+</div>
+<div class="csl-entry">
+Kandel, Sean, Andreas Paepcke, Joseph Hellerstein, and Jeffrey Heer. 2011. <span>“Wrangler: Interactive Visual Specification of Data Transformation Scripts.”</span> In <em>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</em>, 3363–72.
+</div>
+<div class="csl-entry">
+Kirk, Andy. 2016. <em>Data Visualisation: A Handbook for Data Driven Design</em>. Sage.
+</div>
+<div class="csl-entry">
+Kling, Rob, and Susan Leigh Star. 1998. <span>“Human Centered Systems in the Perspective of Organizational and Social Informatics.”</span> <em>ACM SIGCAS Computers and Society</em> 28 (1): 22–29. <a href="https://doi.org/10.1145/277351.277356">https://doi.org/10.1145/277351.277356</a>.
+</div>
+<div class="csl-entry">
+Koesten, Laura, and Elena Simperl. 2021. <span>“UX of Data: Making Data Available Doesn’t Make It Usable.”</span> <em>Interactions</em> 28 (2): 97–99.
+</div>
+<div class="csl-entry">
+Matloff, Norman S. 2011. <em>The Art of r Programming: Tour of Statistical Software Design</em>. No Starch Press.
+</div>
+<div class="csl-entry">
+Munzner, Tamara. 2014. <em>Visualization Analysis and Design</em>. CRC press.
+</div>
+<div class="csl-entry">
+Standardization, International Organization for. 2010. <em>Ergonomics of Human-System Interaction: Part 210: Human-Centred Design for Interactive Systems</em>. ISO.
+</div>
+<div class="csl-entry">
+Statista, Inc. 2021. <span>“Volume of Data/Information Created, Captured, Copied, and Consumed Worldwide from 2010 to 2025.”</span> Statista, Inc. <a href="https://www.statista.com/statistics/871513/worldwide-data-created/">https://www.statista.com/statistics/871513/worldwide-data-created/</a>.
+</div>
+<div class="csl-entry">
+Tricia Wang. 2016. <span>“Why Big Data Needs Thick Data.”</span> Medium. <a href="https://medium.com/ethnography-matters/why-big-data-needs-thick-data-b4b3e75e3d7">https://medium.com/ethnography-matters/why-big-data-needs-thick-data-b4b3e75e3d7</a>.
+</div>
+<div class="csl-entry">
+Tufte, Edward R. 1997. <em>Visual Explanations - Images and Quantities, Evidence and Narrative</em>. Graphics Press.
+</div>
+<div class="csl-entry">
+Tukey, John Wilder. 1977. <em>Exploratory Data Analysis</em>. Addison-Wesley Series in Behavioral Science. Addison-Wesley Pub. Co.
+</div>
+<div class="csl-entry">
+Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st edition. O’Reilly Media. <a href="https://r4ds.had.co.nz">https://r4ds.had.co.nz</a>.
+</div>
+<div class="csl-entry">
+Wilson, Edward O. 1999. <em>Consilience: The Unity of Knowledge</em>. Vol. 31. Vintage.
+</div>
+<div class="csl-entry">
+Wongsuphasawat, Kanit, Dominik Moritz, Anushka Anand, Jock Mackinlay, Bill Howe, and Jeffrey Heer. 2015. <span>“Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations.”</span> <em>IEEE Transactions on Visualization and Computer Graphics</em> 22 (1): 649–58.
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Gebruetal2018datasheets" class="csl-entry">
+Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2018. <span>“Datasheets for Datasets.”</span> <em>arXiv.org</em> cs.DB (March). <a href="http://arxiv.org/abs/1803.09010v7">http://arxiv.org/abs/1803.09010v7</a>.
+</div>
+<div id="ref-Hollandetal2018DatasetNutritionLabel" class="csl-entry">
+Holland, Sarah, Ahmed Hosny, Sarah Newman, Joshua Joseph, and Kasia Chmielinski. 2018. <span>“The Dataset Nutrition Label - a Framework to Drive Higher Data Quality Standards.”</span> <em>CoRR</em> cs.DB (January). <a href="http://arxiv.org/abs/1805.03677v1">http://arxiv.org/abs/1805.03677v1</a>.
+</div>
+<div id="ref-kandel2011wrangler" class="csl-entry">
+Kandel, Sean, Andreas Paepcke, Joseph Hellerstein, and Jeffrey Heer. 2011. <span>“Wrangler: Interactive Visual Specification of Data Transformation Scripts.”</span> In <em>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</em>, 3363–72.
+</div>
+<div id="ref-KoestenSimperl2021_dataUX" class="csl-entry">
+Koesten, Laura, and Elena Simperl. 2021. <span>“UX of Data: Making Data Available Doesn’t Make It Usable.”</span> <em>Interactions</em> 28 (2): 97–99.
+</div>
+<div id="ref-Matloff2011ArtofRProgramming" class="csl-entry">
+Matloff, Norman S. 2011. <em>The Art of r Programming: Tour of Statistical Software Design</em>. No Starch Press.
+</div>
+<div id="ref-munzner2014visualization" class="csl-entry">
+Munzner, Tamara. 2014. <em>Visualization Analysis and Design</em>. CRC press.
+</div>
+<div id="ref-Tukey1977eda" class="csl-entry">
+Tukey, John Wilder. 1977. <em>Exploratory Data Analysis</em>. Addison-Wesley Series in Behavioral Science. Addison-Wesley Pub. Co.
+</div>
+<div id="ref-WickhamGrolemund2017Rfordatascience" class="csl-entry">
+Wickham, Hadley, and Garrett Grolemund. 2017. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 1st edition. O’Reilly Media. <a href="https://r4ds.had.co.nz">https://r4ds.had.co.nz</a>.
+</div>
+<div id="ref-wongsuphasawat2015voyager" class="csl-entry">
+Wongsuphasawat, Kanit, Dominik Moritz, Anushka Anand, Jock Mackinlay, Bill Howe, and Jeffrey Heer. 2015. <span>“Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations.”</span> <em>IEEE Transactions on Visualization and Computer Graphics</em> 22 (1): 649–58.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>I highly recommend reading more about him, for example in <a href="https://www.stat.berkeley.edu/~brill/Papers/life.pdf" class="uri">https://www.stat.berkeley.edu/~brill/Papers/life.pdf</a> .<a href="sec:understandingdata.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>The so-called “smooth part of a data set” is the variability that the analyst has accounted for so far, while the “rough” part is the variability that remains unexplained.<a href="sec:understandingdata.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>A dataframe is a list, with each component of that list being a equal length vector. Thus, intuitively, a dataframe is like a matrix with a rows-and-comlumns-structure. However, it differs from a matrix, since each column can having different mode (data type) <span class="citation">(<a href="#ref-Matloff2011ArtofRProgramming" role="doc-biblioref">Matloff 2011</a>)</span>.<a href="sec:understandingdata.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>An excellent introduction in the usefulness of this method is given by Claus Wilke, check out <a href="https://clauswilke.com/dataviz/histograms-density-plots.html" class="uri">https://clauswilke.com/dataviz/histograms-density-plots.html</a><a href="sec:understandingdata.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sec:processdataviz.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/clmb/lecture_data_visualization/branches/edit/main/03-exploring_data.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Data Vizualization - From a Human-Centered Design Perspective (Lecture Notes).pdf", "Data Vizualization - From a Human-Centered Design Perspective (Lecture Notes).epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

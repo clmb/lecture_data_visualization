@@ -19,13 +19,13 @@ fig:chunk-label17a
 fig:chunk-label11-1
 fig:chunk-label19
 fig:chunk-label20
-sec:introduction
+the-value-of-data-visualization
 visualization-example-napoleons-march
 visualization-example-cholera-epidemic-in-london
 visualization-example-space-shuttle-challenger-disaster
 sec:hcd
-sec:processdataviz
 the-process-of-visualizing-data
+the-process-of-visualizing-data-1
 the-situation-level
 the-datatask-abstraction-level
 the-visual-encodinginteraction-idiom-level
@@ -40,7 +40,7 @@ sec:variabletype
 reflecting-on-tasks
 user-goals-are-defined-by-actions
 the-how-of-visualization-design---at-a-glance
-sec:understandingdata
+understanding-your-data
 understanding-the-data-context
 understanding-the-data-structure
 using-r-for-data-exploration

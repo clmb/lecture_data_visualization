@@ -1,6 +1,12 @@
 book_filename: "Data Vizualization - From a Human-Centered Design Perspective (Lecture Notes)"
+repo: https://github.com/clmb/lecture_data_visualization
 delete_merged_file: true
-output_dir: "docs"
+clean: [packages.bib, bookdown.bbl]
+output_dir: "_book"
 language:
+  label:
+    fig: "FIGURE"
+    tab: "TABLE"
   ui:
+    edit: "Edit"
     chapter_name: "Chapter "

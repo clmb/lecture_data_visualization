@@ -1,4 +1,4 @@
-#  The Value of Data Visualization {#sec:introduction}
+#  The Value of Data Visualization
 
 In the following section, I highlight the value of data visualizations, which is caused by an increasing availability of data. I highlight these values by different typical examples from data visualizations. 
 

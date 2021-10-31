@@ -1,4 +1,4 @@
-# The Process of Visualizing Data {#sec:processdataviz}
+# The Process of Visualizing Data
 
 <!-- The Process of Visualizing Data (what are possible starting points for the design; how does the process relates to human-centered design; what are existing flaws; what are possible instances) -->
 <!-- Reflecting on Data (what are differences between data, information, knowledge; what is cooked data; what is the difference between thick and thin data) -->

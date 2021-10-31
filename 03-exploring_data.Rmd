@@ -1,4 +1,4 @@
-# Understanding your Data {#sec:understandingdata}
+# Understanding your Data
 
 By building on the Nested odel of Munzner [@munzner2014visualization], we have realized how important it is to understand the context of the data origin and the data at hand. In this chapter, we focus on the data, because many data viz project start with so-called ''found data''. These are data sets that are openly available on the internet, data sets in which creating you were not involved. The increasing use of data everywhere requires to think about data literacy, inclusion, and fairness to ensure that data creates value [@KoestenSimperl2021_dataUX]. However, data is often reused, thus, we need to reflect on where data has been created. Koesten & Simperl [@KoestenSimperl2021_dataUX] differentiate three main activities to interact with data: inspecting, engaging with the data, and placing data in context. 
 
@@ -97,7 +97,10 @@ fly.sample <- sample_frac(flights, .1) # takes a sample of 10 per cent
 # dimensions of the data set
 dim(fly.sample) 
 
+# remove all observations that are not complete
 fly.sample <- fly.sample[complete.cases(fly.sample), ]
+
+# dimensions of the data set
 dim(fly.sample)
 
 ```    
@@ -152,10 +155,13 @@ What do you think of this chart? What can you say about flight delay times now? 
 
 ```{r fig.cap="Second scatterplot of delay times.", message=FALSE, warning=FALSE, chunk-label5, echo=TRUE, paged.print=FALSE}
 
-# Remove all flights with no delay
+# dimensions of the data set
 dim(fly.sample)
+
+# Remove all flights with no delay
 fly.sample <- subset(fly.sample, dep_delay>0)
 
+# dimensions of the data set
 dim(fly.sample)
 
 ``` 
@@ -260,10 +266,11 @@ ggplot(fly.viz2, aes(x='',y=dep_delay)) + geom_boxplot()
 
 ```{r, chunk-label10, echo=TRUE, fig.dim = c(4, 3), fig.cap = "Boxplot of Delay Times (log scale).", message=FALSE, warning=FALSE, paged.print=FALSE}
 
-# Visualize Data - Box Plot with log scale
 # the function mutate() adds new variables and preserves existing ones
 fly.viz2 <- mutate(fly.viz2, min_delay=min(fly.viz2$dep_delay, na.rm=TRUE)) 
 fly.viz2 <- mutate(fly.viz2, log_dep_delay = log(fly.viz2$dep_delay - fly.viz2$min_delay)) 
+
+# Visualize Data - Box Plot with log scale
 ggplot(fly.viz2, aes(x='', y=log_dep_delay)) + geom_boxplot()
 
 ```
@@ -280,7 +287,7 @@ ggplot(fly.viz2, aes(x=origin, y=log_dep_delay)) + geom_boxplot() +
 
 ```
 
-## Summary Statistics
+### Summary Statistics
 
 Let's continue our discussion of exploratory data analysis. In the previous section, we saw ways to visualize attributes (variables) using graphs to begin understanding the properties of the data distribution, an essential and preliminary step in data analysis. In this section, we begin discussing statistical or numerical summaries of data to quantify properties we have observed using visual summaries and plots. Remember that one purpose of EDA is to identify problems in data and understand variable properties. We also want to use EDA to understand the relationship between pairs of variables, such as their correlation or covariance.
 
@@ -296,15 +303,15 @@ In this chapter, we use the diamond data set, that contains the prices, carat, c
 
 # load dataset and show structure
 data(diamonds)
-#skim(diamonds)
+# skim(diamonds)
 
-#show attributes only
+# show attributes only
 names(diamonds)
 
-# Count frequencies
+# count frequencies
 table(diamonds$cut)
 
-# Counts proportions
+# counts proportions
 prop.table(table(diamonds$cut))
 
 ```
