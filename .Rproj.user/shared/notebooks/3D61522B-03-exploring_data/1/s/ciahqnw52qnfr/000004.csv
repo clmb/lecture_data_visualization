@@ -1,0 +1,3 @@
+"0",""
+"0","# dimensions of the data set"
+"0","ggplot(diamonds, aes(x=depth)) + geom_histogram(bins=100)"

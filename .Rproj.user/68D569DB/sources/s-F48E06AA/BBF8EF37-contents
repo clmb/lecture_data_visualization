@@ -1,0 +1,39 @@
+# Exploring Your Data
+
+In der Wahrscheinlichkeitstheorie betrachten wir einen zugrundeliegenden Prozess, der eine gewisse Zufälligkeit oder Unsicherheit aufweist, die durch Zufallsvariablen modelliert wird, und wir finden heraus, was passiert. 
+
+In der Statistik beobachten wir etwas, das passiert ist, und versuchen herauszufinden, welcher zugrunde liegende Prozess diese Beobachtungen erklären würde.
+
+Statistik ist eng mit der Wahrscheinlichkeitstheorie verbunden. Mit Hilfe der Statistik können Sie die Wahrscheinlichkeit, die Chance, dass ein bestimmtes Ereignis eintritt, ausrechnen: Wenn Sie wissen wollen, wie hoch die Wahrscheinlichkeit ist, dass Ihr Ferienflugzeug abstürzt, denken Sie daran, wie viele Flugzeuge in der Regel innerhalb eines Jahres abstürzen. Da diese Zahl sehr klein ist, folgern Sie, dass die Wahrscheinlichkeit, dass Ihr Flugzeug abstürzt, ebenfalls gering ist. Sie haben eine sehr einfache statistische Analyse der Daten über Flugzeugabstürze durchgeführt und daraus eine Wahrscheinlichkeit berechnet.
+
+Aber die Dinge funktionieren auch umgekehrt: Sie können abstrakte Wahrscheinlichkeiten verwenden, um Ihnen bei Ihren Statistiken zu helfen. Sagen Sie zum Beispiel, Sie wollen testen, ob ein Würfel, der in einem Casino verwendet wird, fair ist. Dazu werfen Sie den Würfel sehr oft und zeichnen die Ergebnisse auf. Dann argumentieren Sie wie folgt: Wenn der Würfel fair ist, dann sollte jede Zahl gleich wahrscheinlich sein. Es gibt sechs Zahlen, also sollte jede Zahl in 1/6 der Fälle auftauchen. Sie vergleichen den tatsächlichen Würfel mit einem idealen Würfel: Wenn Ihr Casinowürfel Ihnen in etwa 1/6 aller Würfe jede Zahl liefert, entscheiden Sie, dass es fair ist.
+
+Die Wahrscheinlichkeitstheorie ist wichtig, wenn es um die Auswertung von Statistiken geht. Wenn Sie in einer Meinungsumfrage feststellen, dass 80% der Befragten den derzeitigen Premierminister mögen, ist die Versuchung groß, daraus zu schließen, dass der Premierminister sehr beliebt ist. Aber woher wissen Sie, dass Ihr Ergebnis nicht nur zufällig zustande gekommen ist? Nun, Sie verwenden die Wahrscheinlichkeitstheorie, um die Wahrscheinlichkeit zu berechnen, dass Ihr Ergebnis zufällig zustande gekommen ist - wenn diese Wahrscheinlichkeit sehr gering ist, dann sollten Sie zu dem Schluss kommen, dass der Premierminister sehr beliebt ist.
+
+Statistics is the branch of mathematics that transforms data into useful information for decision makers
+
+Statistics is the art of understanding and learning from data
+
+Involves
+Collecting data
+Presenting and describing data
+Analyzing and interpreting data
+
+Data are facts that we consider worth collecting, summarizing, analyzing, and interpreting
+
+Data sets are data collected for a particular study or analysis
+
+Unit of analysis is a person, thing, transaction, or event that can be separately and uniquely identified and about which we want to collect data
+Person (student, customer, programmer, ...)
+Thing (education, power plant, ...)
+Transaction (sale, cost of a software license, monthly rent, ...)
+Event (application, election)
+
+Variable is a characteristic, an attribute, or an occurrence observed for each unit of analysis
+
+Examples
+Unit of analysis: a computer science student
+Variables: gender, age, studentID
+
+
+

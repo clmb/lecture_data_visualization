@@ -1,0 +1,39 @@
+h1:sec:understandingdata Understanding your Data
+h2:understanding-the-data-context Understanding the Data Context
+h2:understanding-the-data-structure Understanding the Data Structure
+h3:using-r-for-data-exploration Using R for Data Exploration
+h3:visualizing-data Visualizing Data
+h3:scatterplot Scatterplot
+fig:chunk-label3 Scatterplot of delay times.
+fig:chunk-label4 Second scatterplot of delay times.
+h3:histogram Histogram
+fig:chunk-label6 Histogram of Delay Times.
+fig:chunk-label7 Histogram of Delay Times.
+h3:density-plot Density Plot
+fig:chunk-label8 Density Plot of Delay Times.
+h3:boxplot Boxplot
+fig:chunk-label9 Boxplot of Delay Times.
+fig:chunk-label10 Boxplot of Delay Times (log scale).
+h3:compare-distributions Compare Distributions
+fig:chunk-label11 Multiple Boxplots of Delay Times depending on airport origine.
+h2:summary-statistics Summary Statistics
+fig:chunk-label12 Diamonds Data Set.
+fig:chunk-label13 Distribution of Depth in the Diamonds Data Set.
+h3:central-tendency Central Tendency
+fig:chunk-label14 Show Mean in Distribution of Depth in the Diamonds Data Set.
+h3:median-and-iqr Median, and IQR
+fig:chunk-label15 Median, median and range in Distribution of Depth in the Diamonds Data Set.
+fig:chunk-label16 Rang, Variance and Standard Deviation of Depth in the Diamonds Data Set.
+h3:outliers Outliers
+fig:chunk-label17 Outlier of Depth in the Diamonds Data Set.
+fig:chunk-label17 Spread of Depth in the Diamonds Data Set.
+h3:skewness Skewness
+fig:chunk-label18 Summary Statistics of Depth in the Diamonds Data Set.
+fig:chunk-label11-1 Scatterplot of Price Depending On Carat
+h3:covariance-and-correlation Covariance and Correlation
+fig:chunk-label19 Covariance and correlation.
+h3:correlation-matrix Correlation Matrix
+fig:chunk-label20 Correlation Matrix.
+h2:general-guidelines-for-eda General Guidelines for EDA
+h2:tools-and-libraries-for-data-exploration Tools and Libraries for Data Exploration
+

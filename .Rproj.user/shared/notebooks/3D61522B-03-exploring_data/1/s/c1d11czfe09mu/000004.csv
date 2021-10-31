@@ -1,0 +1,7 @@
+"0",""
+"0","# Covariance and correlation"
+"0","diamonds %>%"
+"0","  ggplot(aes(x=carat, y=price)) +"
+"0","  geom_point() +"
+"0","  geom_hline(aes(yintercept = mean(price)), color=""blue"", lty=2) +"
+"0","  geom_vline(aes(xintercept = mean(carat)), color=""blue"", lty=2)"

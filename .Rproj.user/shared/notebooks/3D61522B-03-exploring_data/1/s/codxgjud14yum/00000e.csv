@@ -1,0 +1,6 @@
+"0",""
+"0","# Visualize Data - Histogram"
+"0","ggplot(fly.sample, aes(x=dep_delay)) + geom_histogram() +"
+"0","  xlab(""Departure delay (in min)"") + ylab(""Number of Flights"")  "
+"2","`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+"

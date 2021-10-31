@@ -1,0 +1,860 @@
+{
+    "sources": [
+        {
+            "URL": "https://www.statista.com/statistics/871513/worldwide-data-created/",
+            "author": [
+                {
+                    "literal": "Statista, Inc."
+                }
+            ],
+            "id": "statista2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "Statista, Inc.",
+            "title": "Volume of data/information created, captured, copied, and consumed worldwide from 2010 to 2025",
+            "type": ""
+        },
+        {
+            "URL": "https://medium.com/ethnography-matters/why-big-data-needs-thick-data-b4b3e75e3d7",
+            "author": [
+                {
+                    "literal": "Tricia Wang"
+                }
+            ],
+            "id": "wang2016bigdata",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Medium",
+            "title": "Why big data needs thick data",
+            "type": ""
+        },
+        {
+            "URL": "http://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "xie2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wilson",
+                    "given": "Edward O."
+                }
+            ],
+            "id": "wilson1999consilience",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "publisher": "Vintage",
+            "title": "Consilience: The unity of knowledge",
+            "title-short": "Consilience",
+            "type": "book",
+            "volume": "31"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kirk",
+                    "given": "Andy"
+                }
+            ],
+            "id": "kirk2019data",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Sage",
+            "title": "Data visualisation: A handbook for data driven design",
+            "title-short": "Data visualisation",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Tufte",
+                    "given": "Edward R."
+                }
+            ],
+            "id": "tufte1997visualexplanation",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "publisher": "Graphics Press",
+            "title": "Visual explanations - images and quantities, evidence and narrative",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1145/277351.277356",
+            "author": [
+                {
+                    "family": "Kling",
+                    "given": "Rob"
+                },
+                {
+                    "family": "Star",
+                    "given": "Susan Leigh"
+                }
+            ],
+            "container-title": "ACM SIGCAS Computers and Society",
+            "id": "KlingStar1998_HCD",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998,
+                        3
+                    ]
+                ]
+            },
+            "page": "22-29",
+            "title": "Human centered systems in the perspective of organizational and social informatics",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "author": [
+                {
+                    "dropping-particle": "for",
+                    "family": "Standardization",
+                    "given": "International Organization"
+                }
+            ],
+            "id": "international2010ergonomics",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "publisher": "ISO",
+            "title": "Ergonomics of human-system interaction: Part 210: Human-centred design for interactive systems",
+            "title-short": "Ergonomics of human-system interaction",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kandel",
+                    "given": "Sean"
+                },
+                {
+                    "family": "Paepcke",
+                    "given": "Andreas"
+                },
+                {
+                    "family": "Hellerstein",
+                    "given": "Joseph"
+                },
+                {
+                    "family": "Heer",
+                    "given": "Jeffrey"
+                }
+            ],
+            "container-title": "Proceedings of the SIGCHI conference on human factors in computing systems",
+            "id": "kandel2011wrangler",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "3363-3372",
+            "title": "Wrangler: Interactive visual specification of data transformation scripts",
+            "title-short": "Wrangler",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wongsuphasawat",
+                    "given": "Kanit"
+                },
+                {
+                    "family": "Moritz",
+                    "given": "Dominik"
+                },
+                {
+                    "family": "Anand",
+                    "given": "Anushka"
+                },
+                {
+                    "family": "Mackinlay",
+                    "given": "Jock"
+                },
+                {
+                    "family": "Howe",
+                    "given": "Bill"
+                },
+                {
+                    "family": "Heer",
+                    "given": "Jeffrey"
+                }
+            ],
+            "container-title": "IEEE transactions on visualization and computer graphics",
+            "id": "wongsuphasawat2015voyager",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "649-658",
+            "publisher": "IEEE",
+            "title": "Voyager: Exploratory analysis via faceted browsing of visualization recommendations",
+            "title-short": "Voyager",
+            "type": "article-journal",
+            "volume": "22"
+        },
+        {
+            "author": [
+                {
+                    "family": "Munzner",
+                    "given": "Tamara"
+                }
+            ],
+            "id": "munzner2014visualization",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "publisher": "CRC press",
+            "title": "Visualization analysis and design",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fry",
+                    "given": "Ben"
+                }
+            ],
+            "id": "fry2008visualizing",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "publisher": "O’Reilly Media, Inc.",
+            "title": "Visualizing data: Exploring and explaining data with the processing environment",
+            "title-short": "Visualizing data",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "D’ignazio",
+                    "given": "Catherine"
+                },
+                {
+                    "family": "Klein",
+                    "given": "Lauren F"
+                }
+            ],
+            "id": "dignazio2020datafeminism",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "MIT press",
+            "title": "Data feminism",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Aamodt",
+                    "given": "Agnar"
+                },
+                {
+                    "family": "Nygård",
+                    "given": "Mads"
+                }
+            ],
+            "container-title": "Data & Knowledge Engineering",
+            "id": "aamodt1995datainformationknowledge",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "191-222",
+            "publisher": "Elsevier",
+            "title": "Different roles and mutual dependencies of data, information, and knowledge—an AI perspective on their integration",
+            "type": "article-journal",
+            "volume": "16"
+        },
+        {
+            "author": [
+                {
+                    "family": "Haraway",
+                    "given": "Donna"
+                }
+            ],
+            "container-title": "Feminist studies",
+            "id": "haraway1988situated",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        1988
+                    ]
+                ]
+            },
+            "page": "575-599",
+            "publisher": "JSTOR",
+            "title": "Situated knowledges: The science question in feminism and the privilege of partial perspective",
+            "title-short": "Situated knowledges",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "author": [
+                {
+                    "family": "Padilla",
+                    "given": "Lace M"
+                }
+            ],
+            "container-title": "2018 IEEE evaluation and beyond-methodological approaches for visualization (BELIV)",
+            "id": "padilla2018case",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "69-77",
+            "publisher": "IEEE",
+            "title": "A case for cognitive models in visualization research: Position paper",
+            "title-short": "A case for cognitive models in visualization research",
+            "type": "paper-conference"
+        },
+        {
+            "URL": "http://arxiv.org/abs/1805.03677v1",
+            "author": [
+                {
+                    "family": "Holland",
+                    "given": "Sarah"
+                },
+                {
+                    "family": "Hosny",
+                    "given": "Ahmed"
+                },
+                {
+                    "family": "Newman",
+                    "given": "Sarah"
+                },
+                {
+                    "family": "Joseph",
+                    "given": "Joshua"
+                },
+                {
+                    "family": "Chmielinski",
+                    "given": "Kasia"
+                }
+            ],
+            "container-title": "CoRR",
+            "id": "Hollandetal2018DatasetNutritionLabel",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        1
+                    ]
+                ]
+            },
+            "publisher": "Cornell University Library",
+            "title": "The dataset nutrition label - a framework to drive higher data quality standards.",
+            "type": "article-journal",
+            "volume": "cs.DB"
+        },
+        {
+            "URL": "http://arxiv.org/abs/1803.09010v7",
+            "author": [
+                {
+                    "family": "Gebru",
+                    "given": "Timnit"
+                },
+                {
+                    "family": "Morgenstern",
+                    "given": "Jamie"
+                },
+                {
+                    "family": "Vecchione",
+                    "given": "Briana"
+                },
+                {
+                    "family": "Vaughan",
+                    "given": "Jennifer Wortman"
+                },
+                {
+                    "family": "Wallach",
+                    "given": "Hanna"
+                },
+                {
+                    "family": "Daumé III",
+                    "given": "Hal"
+                },
+                {
+                    "family": "Crawford",
+                    "given": "Kate"
+                }
+            ],
+            "container-title": "arXiv.org",
+            "id": "Gebruetal2018datasheets",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        3
+                    ]
+                ]
+            },
+            "publisher": "Cornell University Library",
+            "title": "Datasheets for datasets",
+            "type": "article-journal",
+            "volume": "cs.DB"
+        },
+        {
+            "ISBN": "978-0-201-07616-5",
+            "author": [
+                {
+                    "family": "Tukey",
+                    "given": "John Wilder"
+                }
+            ],
+            "collection-title": "Addison-wesley series in behavioral science",
+            "id": "Tukey1977eda",
+            "issued": {
+                "date-parts": [
+                    [
+                        1977
+                    ]
+                ]
+            },
+            "publisher": "Addison-Wesley Pub. Co",
+            "title": "Exploratory data analysis",
+            "type": "book"
+        },
+        {
+            "DOI": "10.4135/9781506304144",
+            "ISBN": "978-1-5063-0416-8",
+            "URL": "https://methods.sagepub.com/book/interpreting-and-using-statistics-in-psychological-research",
+            "author": [
+                {
+                    "family": "Christopher",
+                    "given": "Andrew N."
+                }
+            ],
+            "id": "Christopher2017Statistics",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "SAGE Publications, Inc",
+            "title": "Interpreting and using statistics in psychological research",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-1-59327-384-2",
+            "author": [
+                {
+                    "family": "Matloff",
+                    "given": "Norman S."
+                }
+            ],
+            "id": "Matloff2011ArtofRProgramming",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "publisher": "No Starch Press",
+            "title": "The art of r programming: Tour of statistical software design",
+            "title-short": "The art of r programming",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-1-4919-1039-9",
+            "URL": "https://r4ds.had.co.nz",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "edition": "1st edition",
+            "id": "WickhamGrolemund2017Rfordatascience",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        1
+                    ]
+                ]
+            },
+            "publisher": "O’Reilly Media",
+            "title": "R for data science: Import, tidy, transform, visualize, and model data",
+            "title-short": "R for data science",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Koesten",
+                    "given": "Laura"
+                },
+                {
+                    "family": "Simperl",
+                    "given": "Elena"
+                }
+            ],
+            "container-title": "Interactions",
+            "id": "KoestenSimperl2021_dataUX",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        3
+                    ]
+                ]
+            },
+            "page": "97-99",
+            "title": "UX of data: Making data available doesn’t make it usable",
+            "title-short": "UX of data",
+            "type": "article-journal",
+            "volume": "28"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "R-base",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 0.24",
+            "title": "Bookdown: Authoring books and technical documents with r markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-knitr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 1.33",
+            "title": "Knitr: A general-purpose package for dynamic report generation in r",
+            "title-short": "Knitr",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=rmarkdown",
+            "author": [
+                {
+                    "family": "Allaire",
+                    "given": "JJ"
+                },
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "McPherson",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Luraschi",
+                    "given": "Javier"
+                },
+                {
+                    "family": "Ushey",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Atkins",
+                    "given": "Aron"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Cheng",
+                    "given": "Joe"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Iannone",
+                    "given": "Richard"
+                }
+            ],
+            "id": "R-rmarkdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 2.10",
+            "title": "Rmarkdown: Dynamic documents for r",
+            "title-short": "Rmarkdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "bookdown2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1138700109",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Bookdown: Authoring books and technical documents with R markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "knitr2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "URL": "http://www.crcpress.com/product/isbn/9781466561595",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "container-title": "Implementing reproducible computational research",
+            "editor": [
+                {
+                    "family": "Stodden",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "knitr2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1466561595",
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Knitr: A comprehensive tool for reproducible research in R",
+            "title-short": "Knitr",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/rmarkdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "rmarkdown2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "ISBN 9781138359338",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown: The definitive guide",
+            "title-short": "R markdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/rmarkdown-cookbook",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "Riederer",
+                    "given": "Emily"
+                }
+            ],
+            "id": "rmarkdown2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "ISBN 9780367563837",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown cookbook",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "book.bib",
+        "packages.bib"
+    ]
+}

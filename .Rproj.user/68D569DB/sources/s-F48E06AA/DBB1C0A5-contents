@@ -1,0 +1,185 @@
+library(nycflights13)
+library(dplyr)
+library(ggplot2)
+library(tibble)
+library(rlang)
+library(tidyr)
+
+##########################################################################################
+# Introduce Data Set A (flights)
+##########################################################################################
+
+# Show the internal structure of the R object (= flights)
+str(flights)
+
+# dimensions of the data set
+dim(flights)
+
+# Select a sample from the whole data set
+fly.sample <- sample_frac(flights, .1) # takes a sample of 10 per cent
+
+# dimensions of the data set
+dim(fly.sample) 
+
+
+
+##########################################################################################
+# First Overview
+##########################################################################################
+
+# Visualize Data 1 - Scatterplot
+fly.viz1 <- rowid_to_column(fly.sample)
+ggplot(fly.viz1, aes(x=fly.viz1$rowid, y=fly.viz1$dep_delay)) + geom_point() 
+
+
+# Visualize Data - Scatterplot with ordered values
+fly.viz2 <- arrange(fly.sample, fly.sample$dep_delay)
+fly.viz2 <- rowid_to_column(fly.sample)
+ggplot(fly.viz2, aes(x=fly.viz2$rowid, y=fly.viz2$dep_delay)) + geom_point() 
+
+
+# Visualize Data - Histogram
+ggplot(fly.viz2, aes(x=dep_delay)) + geom_histogram()
+ggplot(fly.viz2, aes(x=dep_delay)) + geom_histogram(binwidth = 10) #Change the size of the bins
+
+# Visualize Data - Density Plot
+ggplot(fly.viz2, aes(x=dep_delay)) + geom_density(color="darkblue", fill="lightblue")
+
+# Visualize Data - Box Plot 
+ggplot(fly.viz2, aes(x='',y=dep_delay)) + geom_boxplot()
+
+# Visualize Data - Box Plot with log scale
+# the function mutate() adds new variables and preserves existing ones
+fly.viz2 <- mutate(fly.viz2, min_delay=min(fly.viz2$dep_delay, na.rm=TRUE)) 
+fly.viz2 <- mutate(fly.viz2, log_dep_delay = log(fly.viz2$dep_delay - fly.viz2$min_delay)) 
+ggplot(fly.viz2, aes(x='', y=log_dep_delay)) + geom_boxplot()
+
+##########################################################################################
+# Visualization of pairs of variables
+##########################################################################################
+
+# Visualize Data - Box Plot in groups
+ggplot(fly.viz2, aes(x=origin, y=log_dep_delay)) + geom_boxplot()
+
+
+# Visualize Data - Scatterplot
+ggplot(fly.viz2, aes(x=dep_delay, y=arr_delay)) + geom_point()
+
+
+##########################################################################################
+# Introduce Data Set A (diamonds)
+##########################################################################################
+
+data(diamonds)
+
+# Show the internal structure of the R object (= flights)
+str(diamonds)
+
+# dimensions of the data set
+dim(diamonds)
+
+# dimensions of the data set
+ggplot(diamonds, aes(x=depth)) + geom_histogram(bins=100)
+
+# min and max value
+summarize(diamonds, min_depth = min(diamonds$depth), max_depth = max(diamonds$depth))
+
+# determine median
+ggplot(diamonds, aes(x=depth)) + geom_histogram(bins=100) + geom_vline(aes(xintercept=median(depth)), color="red")
+
+# mean vs. median
+summarize(diamonds, mean_depth = mean(diamonds$depth), median_depth = median(diamonds$depth))
+
+
+# create a df with standard deviation values to plot
+sds_to_plot <- seq(-6,6)
+sd_df <- diamonds 
+sd_df <- summarize(sd_df, mean_depth = mean(sd_df$depth), sd_depth = sd(sd_df$depth)) 
+sd_df <- slice(sd_df, rep_along(sds_to_plot, 1))
+sd_df <- mutate(sd_df, sd_to_plot=sds_to_plot) 
+sd_df <- mutate(sd_df, sd_val = mean_depth + sd_to_plot * sd_depth)
+
+#plot
+ggplot(diamonds, aes(x=depth)) + 
+  geom_histogram(bins=100) +
+  geom_vline(aes(xintercept=mean(depth)), col="blue", size=1.5) +
+  geom_vline(aes(xintercept = sd_val), data=sd_df,
+             linetype=2, size=1.2 - abs(seq(-1,1, len=13)))
+
+# quartile
+quartile_df <- diamonds %>%
+  summarize(first=quantile(diamonds$depth, p=1/4),
+            third=quantile(diamonds$depth, p=3/4)) %>%
+  tidyr::gather(quartile, value)
+
+diamonds %>%
+  ggplot(aes(x=depth)) +
+  geom_histogram(bins=100) +
+  geom_vline(aes(xintercept=median(depth)), size=1.3, color="red") +
+  geom_vline(aes(xintercept=value), data=quartile_df, 
+             size=1,color="red", linetype=2)
+
+# Summary statistics
+summary(diamonds$depth)
+
+
+# Outlier  (based on sd)
+outlier_df <- diamonds %>%
+  summarize(mean_depth=mean(depth), sd_depth=sd(depth)) %>%
+  slice(rep(1, 4)) %>%
+  mutate(multiplier = c(-3, -1.5, 1.5, 3)) %>%
+  mutate(outlier_limit = mean_depth + multiplier * sd_depth)
+
+diamonds %>%
+  ggplot(aes(x=depth)) +
+  geom_histogram(bins=100) +
+  geom_vline(aes(xintercept=outlier_limit), data=outlier_df, color="blue")
+
+
+# Outliers (based on IQR)
+outlier_df <- diamonds %>%
+  summarize(q1=quantile(depth, 1/4), q3=quantile(depth, 3/4), iqr=IQR(depth)) %>%
+  slice(rep(1, 2)) %>%
+  mutate(multiplier = c(1.5, 3)) %>%
+  mutate(lower_outlier_limit = q1 - multiplier * iqr) %>%
+  mutate(upper_outlier_limit = q3 + multiplier * iqr)
+
+diamonds %>%
+  ggplot(aes(x=depth)) +
+  geom_histogram(bins=100) +
+  geom_vline(aes(xintercept=lower_outlier_limit), data=outlier_df, color="red") +
+  geom_vline(aes(xintercept=upper_outlier_limit), data=outlier_df, color="red")
+
+
+# Covariance and correlation
+diamonds %>%
+  ggplot(aes(x=carat, y=price)) +
+  geom_point() +
+  geom_hline(aes(yintercept = mean(price)), color="blue", lty=2) +
+  geom_vline(aes(xintercept = mean(carat)), color="blue", lty=2)
+
+
+# Correlation Matrix (less meaningful example - just a showcase)
+
+diamonds_corr <- cor(diamonds[,c(1,5,6)])
+
+# Print mcor and round to 2 digits
+round(diamonds_corr, digits=2)
+
+# Load visualization from package
+library(corrplot)
+corrplot(diamonds_corr)
+
+
+
+
+
+
+# z-score
+library(ggplot2)
+data(diamonds)
+
+diamonds %>%
+  mutate(scaled_depth = (depth - mean(depth)) / sd(depth)) %>%
+  ggplot(aes(x=scaled_depth)) +
+  geom_histogram(binwidth=.5)
