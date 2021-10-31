@@ -1,4 +1,0 @@
-"0",""
-"0","# determine median"
-"0","ggplot(diamonds, aes(x=depth)) + geom_histogram(bins=100) + geom_vline(aes(xintercept=median(depth)), color=""red"")"
-"0",""
