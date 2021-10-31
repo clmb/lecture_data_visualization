@@ -6,11 +6,11 @@ site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
+url: your book url like https://clmb.github.io/lecture_data_visualization/
 # cover-image: path to the social sharing image like images/cover.jpg
 biblio-style: apalike
 link-citations: yes
-github-repo: clmb/data_visualization
+github-repo: clmb/lecture_data_visualization/
 description: |
   These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin.
 ---
@@ -25,11 +25,7 @@ Basic knowledge of programming (HTML, CSS, Javascript, Python) and data analysis
 
 Please note that the course will focus on how data is visually coded and presented for analysis after the data structure and its meaning are known. We do not explicitly cover exploratory analysis methods for discovering insights in data.
 
-## Text Book {-}
-
-This course is highly influenced bu the work of Tamara Munzner and her book (Visualization Analysis & Design)[https://www.routledge.com/Visualization-Analysis-and-Design/Munzner/p/book/9781466508910]. In our hand library, there are exemplars available.
-
-## Learning Goals & Objectives {-}
+This course is highly influenced by the work of Tamara Munzner and her book [Visualization Analysis & Design](https://www.routledge.com/Visualization-Analysis-and-Design/Munzner/p/book/9781466508910). In our hand library, there are exemplars available.
 
 This course gives students a solid introduction to the fundamentals of data visualization with current insights from research and practice. By the end of the course, students will be able to 
 
