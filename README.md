@@ -1,13 +1,8 @@
 Welcome! 
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+These are the lecture notes of the course ''Data Visualization - From a Human-Centered Perspective'' in the winter term 2021/22. It is a very first draft and I expect many mistakes, however, it is a start and I am looking forward receiving your comments and ideas for suggestions. 
 
-This template provides a skeleton file structure that you can edit to create your book. 
+This course gives students an introduction to the fundamentals of data visualization with current insights from research and practice. 
 
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
-
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+Further information about the course can be found on our homepage:
+https://www.mi.fu-berlin.de/en/inf/groups/hcc/teaching/winter_term_2021_22/course_data_visualization.html
