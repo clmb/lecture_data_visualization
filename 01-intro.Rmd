@@ -24,15 +24,15 @@ We are especially concerned with ''the visual representation and presentation of
 
 When people view your visualization, they go through a process consisting of perceiving, interpreting, and comprehending [@kirk2019data]. In reality, these steps occur in parallel. This first first is simply about perceiving, i.e. reading the chart. People try to understand the main features of the visualizations. In the phase interpreting, these observations are translated into meaning which also involves that people map their interpretation onto their own knowledge about this domain. Especially in situations, where people might not have enough knowledge in the visualized domain, a gap between the observation and the meaning might occur. This gap needs to be recognized and bridged. In the third phase of understanding people reflect on what the interpretation means to themselves. This phase depends especially on your viewers, since what might be a learning for one person, might be cryptic for another.
 
+## Example Visualizations
 
 In the following, we use this framework to discuss three examples for well-received visualization examples. 
-
 
 ```{r, out.width='75%', fig.align='center', fig.cap="Snow's map shows cholera cases in London during the 1854 epidemic. Taken from https://commons.wikimedia.org/wiki/File:Minard.png (Charles Minard (1781-1870), Public domain, via Wikimedia Commons)", echo=FALSE}
 knitr::include_graphics("images/minard-napoleon-march.jpg")
 ```
 
-### Visualization Example: Napoleon's March
+### Napoleon's March
 
 Napoleon's Russian campaign of 1812, after initial French successes, ended in one of the greatest military disasters in history. The French engineer Charles Minard (1781-1870) illustrated the disastrous outcome of Napoleon's failed Russian campaign. The graph (see Figure XXX) shows the size of the army by the width of the band across the map of the campaign on its outward and return legs, with the temperature on the retreat shown in the line graph below. 
 
@@ -48,7 +48,7 @@ knitr::include_graphics("images/snow-cholera-map.jpg")
 ```
 
 
-### Visualization Example: Cholera Epidemic in London
+### Cholera Epidemic in London
 <!-- Further information: https://www.ph.ucla.edu/epi/snow/highressnowmap.html -->
 
 Cholera broke out in Broad Street, London, on the evening of August 31, 1854. This outbreak was one of the most severe outbreaks of cholera in London. One of the investigators of this outbreak, John Snow, suggested that water from the municipal pumps may have caused these deaths. Further investigation of the recorded deaths revealed a strong link between cholera and the Broad Street pump. This pump handle was removed by the authorities after being informed by Snow. How did he arrive at his conclusion and could end the epidemic?
@@ -62,7 +62,7 @@ Snow's study was a major event in the history of public health and the founding 
 knitr::include_graphics("images/tufte_challenger_o-ring.jpg")
 ```
 
-### Visualization Example: Space Shuttle Challenger Disaster
+### Space Shuttle Challenger Disaster
 <!-- https://www.asktog.com/books/challengerExerpt.html -->
 <!-- https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster -->
 

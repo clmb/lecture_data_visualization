@@ -20,9 +20,10 @@ fig:chunk-label11-1
 fig:chunk-label19
 fig:chunk-label20
 the-value-of-data-visualization
-visualization-example-napoleons-march
-visualization-example-cholera-epidemic-in-london
-visualization-example-space-shuttle-challenger-disaster
+example-visualizations
+napoleons-march
+cholera-epidemic-in-london
+space-shuttle-challenger-disaster
 sec:hcd
 the-process-of-visualizing-data
 the-process-of-visualizing-data-1
