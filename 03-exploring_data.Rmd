@@ -401,7 +401,7 @@ $\mbox{outliers}_{IQR}(x)= \{x_j|x_j < x_{(1/4)} - k \times IQR(x) \mbox{ or } x
 
 This is usually referred to as the Tukey outlier rule, where the multiplier k plays the same role as before. We use IQR here because it is less prone to inflating due to severe outliers in the data set. It also works better for skewed data than the standard deviation based method.
 
-```{r chunk-label17, fig.dim = c(4, 3), echo=FALSE, fig.cap="Spread of Depth in the Diamonds Data Set.", message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r chunk-label17a, fig.dim = c(4, 3), echo=FALSE, fig.cap="Spread of Depth in the Diamonds Data Set.", message=FALSE, warning=FALSE, paged.print=FALSE}
 
 # Outliers (based on IQR)
 outlier_df <- diamonds %>%
