@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 The Process of Visualizing Data | Data Visualization - From a Human-Centered Perspective (Lecture Notes)</title>
+  <meta name="description" content="These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 The Process of Visualizing Data | Data Visualization - From a Human-Centered Perspective (Lecture Notes)" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin." />
+  <meta name="github-repo" content="clmb/data_visualization" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 The Process of Visualizing Data | Data Visualization - From a Human-Centered Perspective (Lecture Notes)" />
+  
+  <meta name="twitter:description" content="These are the lecture notes of the course on Data Visualization at the Freie Universität Berlin." />
+  
+
+<meta name="author" content="Claudia Müller-Birn" />
+
+
+<meta name="date" content="2021-10-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sec:introduction.html"/>
+<link rel="next" href="sec:understandingdata.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#text-book"><i class="fa fa-check"></i>Text Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#learning-goals-objectives"><i class="fa fa-check"></i>Learning Goals &amp; Objectives</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="sec:introduction.html"><a href="sec:introduction.html"><i class="fa fa-check"></i><b>1</b> The Value of Data Visualization</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="sec:introduction.html"><a href="sec:introduction.html#visualization-example-napoleons-march"><i class="fa fa-check"></i><b>1.0.1</b> Visualization Example: Napoleon’s March</a></li>
+<li class="chapter" data-level="1.0.2" data-path="sec:introduction.html"><a href="sec:introduction.html#visualization-example-cholera-epidemic-in-london"><i class="fa fa-check"></i><b>1.0.2</b> Visualization Example: Cholera Epidemic in London</a></li>
+<li class="chapter" data-level="1.0.3" data-path="sec:introduction.html"><a href="sec:introduction.html#visualization-example-space-shuttle-challenger-disaster"><i class="fa fa-check"></i><b>1.0.3</b> Visualization Example: Space Shuttle Challenger Disaster</a></li>
+<li class="chapter" data-level="1.1" data-path="sec:introduction.html"><a href="sec:introduction.html#sec:hcd"><i class="fa fa-check"></i><b>1.1</b> Human-Centered Data Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html"><i class="fa fa-check"></i><b>2</b> The Process of Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-process-of-visualizing-data"><i class="fa fa-check"></i><b>2.1</b> The Process of Visualizing Data</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-situation-level"><i class="fa fa-check"></i><b>2.1.1</b> The situation level</a></li>
+<li class="chapter" data-level="2.1.2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-datatask-abstraction-level"><i class="fa fa-check"></i><b>2.1.2</b> The data/task abstraction level</a></li>
+<li class="chapter" data-level="2.1.3" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-visual-encodinginteraction-idiom-level"><i class="fa fa-check"></i><b>2.1.3</b> The visual encoding/interaction idiom level</a></li>
+<li class="chapter" data-level="2.1.4" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-algorithmic-level"><i class="fa fa-check"></i><b>2.1.4</b> The algorithmic level</a></li>
+<li class="chapter" data-level="2.1.5" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#validity-of-your-vis-design"><i class="fa fa-check"></i><b>2.1.5</b> Validity of Your Vis Design</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#mapping-the-human-centered-design-process-and-the-nested-model"><i class="fa fa-check"></i><b>2.2</b> Mapping the Human-Centered Design Process and the Nested Model</a></li>
+<li class="chapter" data-level="2.3" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#major-elements-of-visualization-design"><i class="fa fa-check"></i><b>2.3</b> Major Elements of Visualization Design</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#reflecting-on-data"><i class="fa fa-check"></i><b>2.3.1</b> Reflecting on Data</a></li>
+<li class="chapter" data-level="2.3.2" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#reflecting-on-tasks"><i class="fa fa-check"></i><b>2.3.2</b> Reflecting on Tasks</a></li>
+<li class="chapter" data-level="2.3.3" data-path="sec:processdataviz.html"><a href="sec:processdataviz.html#the-how-of-visualization-design---at-a-glance"><i class="fa fa-check"></i><b>2.3.3</b> The How of Visualization Design - At A Glance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html"><i class="fa fa-check"></i><b>3</b> Understanding your Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#understanding-the-data-context"><i class="fa fa-check"></i><b>3.1</b> Understanding the Data Context</a></li>
+<li class="chapter" data-level="3.2" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#understanding-the-data-structure"><i class="fa fa-check"></i><b>3.2</b> Understanding the Data Structure</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#using-r-for-data-exploration"><i class="fa fa-check"></i><b>3.2.1</b> Using R for Data Exploration</a></li>
+<li class="chapter" data-level="3.2.2" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#visualizing-data"><i class="fa fa-check"></i><b>3.2.2</b> Visualizing Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#scatterplot"><i class="fa fa-check"></i><b>3.2.3</b> Scatterplot</a></li>
+<li class="chapter" data-level="3.2.4" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#histogram"><i class="fa fa-check"></i><b>3.2.4</b> Histogram</a></li>
+<li class="chapter" data-level="3.2.5" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#density-plot"><i class="fa fa-check"></i><b>3.2.5</b> Density Plot</a></li>
+<li class="chapter" data-level="3.2.6" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#boxplot"><i class="fa fa-check"></i><b>3.2.6</b> Boxplot</a></li>
+<li class="chapter" data-level="3.2.7" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#compare-distributions"><i class="fa fa-check"></i><b>3.2.7</b> Compare Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#summary-statistics"><i class="fa fa-check"></i><b>3.3</b> Summary Statistics</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#central-tendency"><i class="fa fa-check"></i><b>3.3.1</b> Central Tendency</a></li>
+<li class="chapter" data-level="3.3.2" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#median-and-iqr"><i class="fa fa-check"></i><b>3.3.2</b> Median, and IQR</a></li>
+<li class="chapter" data-level="3.3.3" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#outliers"><i class="fa fa-check"></i><b>3.3.3</b> Outliers</a></li>
+<li class="chapter" data-level="3.3.4" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#skewness"><i class="fa fa-check"></i><b>3.3.4</b> Skewness</a></li>
+<li class="chapter" data-level="3.3.5" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#covariance-and-correlation"><i class="fa fa-check"></i><b>3.3.5</b> Covariance and Correlation</a></li>
+<li class="chapter" data-level="3.3.6" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#correlation-matrix"><i class="fa fa-check"></i><b>3.3.6</b> Correlation Matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#general-guidelines-for-eda"><i class="fa fa-check"></i><b>3.4</b> General Guidelines for EDA</a></li>
+<li class="chapter" data-level="3.5" data-path="sec:understandingdata.html"><a href="sec:understandingdata.html#tools-and-libraries-for-data-exploration"><i class="fa fa-check"></i><b>3.5</b> Tools and Libraries for Data Exploration</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Visualization - From a Human-Centered Perspective (Lecture Notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sec:processdataviz" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> The Process of Visualizing Data</h1>
+<!-- The Process of Visualizing Data (what are possible starting points for the design; how does the process relates to human-centered design; what are existing flaws; what are possible instances) -->
+<!-- Reflecting on Data (what are differences between data, information, knowledge; what is cooked data; what is the difference between thick and thin data) -->
+<!-- Reflecting on Tasks (domain specific language, tasks consisting of actions and targets) -->
+<!-- Outlook: The How of Visualization Design - at a glance -->
+<!-- TODO: Reorganize the whole section and put the human-centered design process in the center, remove the nested model!!! -->
+<p>In Chapter <a href="sec:introduction.html#sec:introduction">1</a>, we have learned that visualization have helped people from the beginning to make sense of their environment. Before we dive deeper into data visualization, we need to build the necessary methodological foundation. For this, we already introduced human-centered design (see Section <a href="sec:introduction.html#sec:introduction">1</a>); however, in this chapter, I want to focus specifically on the process of visualizing data. In general, we can differentiate two motivations for visualization design: a problem-driven and a technique driven design <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span>. In the former case, a visualization designer tackles a real-world problem of specific users and attempt to design a solution that helps them work more effectively. Such problem can often be solved based on existing visual encoding and interaction idioms (see Section <a href="sec:introduction.html#sec:hcd">1.1</a>, thus, the main challenge is to understand the problem and translate it into an effective visualization design. In the latter case, a visualization designer has an idea for a new visual encoding, an interaction idiom, or a new algorithm. Sometimes, such ideas emerges during problem-driven visualization design.</p>
+<div id="the-process-of-visualizing-data" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> The Process of Visualizing Data</h2>
+<p>When preparing a data visualization project, we are often wondering where to begin with in the first place? From data collection, cleaning, exploration, analysis and visualization, there is a lot that needs to be done in order to derive an insight from data. As you can imagine, there are many proposed data visualization pipelines (e.g., <span class="citation">(<a href="#ref-fry2008visualizing" role="doc-biblioref">Fry 2008</a>)</span>, <span class="citation">(<a href="#ref-kirk2019data" role="doc-biblioref">Kirk 2016</a>)</span>). However, I would like to focus on one proposition - the four levels nested model of visualization design <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span>. Munzner proposed to divide the problem of visualization design into four cascading levels: (1) the situation level, which contains details of a specific application domain; (2) the data/task abstraction level, where the domain-specific problems and data are separated from context; (3) the visual encoding/interaction idiom level, where the data are visualized and interaction is added; (4) the algorithmic level, where the algorithm is realized to computationally instantiate these idioms. These levels are nested, which means that if you make a bad choice in the abstraction phase, then even perfect choices at the idiom and algorithm levels will not result in a visualization solution that solves the intended problem. For example, you misunderstand the context, and thus, the needs of your stakeholders, because of that you are focusing on the wrong data that are being visualized with a insufficient idiom. Finally, it could happen that your code is too slow. Visualization design is usually a highly iterative refinement process, in other words, visualization design follows the principle of design as redesign. In the following, I detail each of these levels.</p>
+<p>The question arises, how you can tackle these challenges properly. Munzner proposes here an immediate validation and downstream validation, in other words, she recommends to properly reflect on each stage on your design decisions before your enter the next level. Taking this very validation-centered perspective on vis design and if you consider that the design of visualizations follows the principle of design as redesign, then your see the parallels to the human-centered design process. You can easily map the Munzner’s levels on the HCD process, which makes it easier to position all the methods you already know in Munzner’s model.</p>
+<div id="the-situation-level" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> The situation level</h3>
+<p>The <strong>Domain Situation</strong> contains the details of a specific application domain. This level focuses on a specific domain situation, which encompasses a group of target users, their domain of interest, their questions, and their data. A domain relates to a particular field of interest of the target users of a vis tool, for example open access, microbiology, or health care. Each domain usually has its own vocabulary for describing its data and problems, and there is usually some existing workflow of how the data is used to solve their problems. A group of target users can be narrowly defined as a handful of people working at a specific company, or broadly defined as anybody who does research.</p>
+<p><strong>Domain Validation</strong> Primary threat is the mischaracterizing of the the problem
+An immediate form of validation is to interview and observe the target audience to verify the characterization. Contextual inquiry is typically better suited for vis designers than silent observation because of the complex cognitive tasks that are targeted.
+One downstream form of validation is to report the rate at which the tool has been adopted by the target audience. A tool that is actually used by its intended users has reached a different level of success than one that has only been used by its designers.</p>
+</div>
+<div id="the-datatask-abstraction-level" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> The data/task abstraction level</h3>
+<p>The _Data/Task Abstraction__ (What-why-level) separates the domain-specific problems and data from the context.
+Your goal is to determine which data type would support a visual representation that addresses the user’s problem.
+Abstracting specific domain questions and data into a domain-independent vocabulary. It allows you to identify situations that are similar, even though there are using a very different language.
+Questions from very different domain situations can map to the same abstract vis tasks. We talked about abstract tasks such as browsing, comparing, and summarizing. The data abstraction level requires you to consider whether and how the same dataset provided by a user should be transformed into another form.</p>
+<p><strong>Abstraction Validation</strong>
+The main thread is that the identified task and designed data abstraction do not solve the characterized problems.
+A immediate validation is that the system must be tested by target users, rather than doing an abstract task specified by the vis system developers.
+A common downstream form of validation is to have a member of the target user community try the tool in controlled user studies. A more rigorous validation approach for this level is to conduct a field study.
+Other evaluation methods for visualizations focus on data insight (types of insight visualizations provide and the time it takes to acquire it).</p>
+</div>
+<div id="the-visual-encodinginteraction-idiom-level" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> The visual encoding/interaction idiom level</h3>
+<p>The <strong>Visual Encoding/Interaction Idiom</strong> maps the data and task on a visual coding and adds interaction capabilities.
+Decision on a specific way to create and manipulate the visual representation of the abstract data, guided by the abstract tasks that you also identified. There are two major concerns at play with idiom design: (1) How to create a single picture of the data? It defines the visual encoding idiom controls exactly what users see. (2) How to manipulate that representation dynamically? The interaction idiom controls how users change what they see.</p>
+<p><strong>Idiom Validation</strong>
+Threat is that the chosen idioms are not effective at communicating the desired abstraction to the person using the system.
+One immediate validation approach is to justify the design of the idiom with respect to known perceptual and cognitive principles by using heuristic evaluation or expert reviews. Downstream validation approaches are
+* a controlled experiment in a laboratory setting: Evaluating the impact of specific idiom design choices by measuring human performance on abstract tasks or getting qualitative feedback;
+* presentation of and qualitative discussion of results in the form of still images or videos as usage scenarios; and
+* quantitative measurement of result images (e.g., number of edge crossings in networks.</p>
+</div>
+<div id="the-algorithmic-level" class="section level3" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> The algorithmic level</h3>
+<p>The <strong>Algorithm</strong> translates the idioms in a concrete programming language. The level involves all of the design choices involved in creating an algorithm. The goal is to efficiently handle the visual encoding and interaction idioms. The nested model emphasizes separating algorithm design, where your primary concerns are about computational issues, from idiom design, where your primary concerns are about human perceptual issues. There is an interplay between these levels. For example, a design that requires something to change dynamically when the user moves the mouse may not be feasible if computing that would take minutes or hours instead of a fraction of a second.</p>
+<p><strong>Algorithm Validation</strong> The primary threat is that the algorithm is suboptimal in terms of time or memory performance, either to a theoretical minimum or in comparison with previously proposed algorithms.
+An immediate form of validation is to analyze the computational complexity of the algorithm.
+The downstream forms of validation:
+* Measure the wall-clock time and memory performance of the implemented algorithm
+* Determine what data you should use to test the algorithm (use benchmarks)
+* Verify the correctness of the algorithm whether through careful testing or formal methods.</p>
+</div>
+<div id="validity-of-your-vis-design" class="section level3" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Validity of Your Vis Design</h3>
+<p>We differentiate three types of validity: construct validity, internal validity, and external validity.</p>
+<p>For example, if a hypothesis states that ‘’self-esteem’’ increases with age, research tracking self-esteem over time from social media must ask whether its assessment of self-esteem from text is actually measuring ‘’self-esteem’’ versus other related or unrelated constructs. In other words, are the observed behaviors (such as words used or frequency of posting) driven primarily by self-esteem as opposed to community norms, variations in system functionality, or other individual aspects.</p>
+<p>Internal validity or does our analysis correctly lead from the measurements to the conclusions of the study? For example, an analysis of whether self-esteem increases with age may not be internally valid if data cleaning accidentally removes messages expressing confidence; or if machine learned classifiers were inadvertently trained to recognize self-esteem only in younger people. Of course, while we do not dwell on them, researchers should also be aware of more blatant logical errors—e.g., comparing the self-esteem of today’s younger population to the self-esteem of today’s older population would be consistent with but would not actually prove that self-esteem increases with age.</p>
+<p>For example, effects observed on one social media platform may manifest differently on another platform due to platform differences, differing community or cultural norms. This concept includes what is sometimes called ecological validity, which captures the extent to which an artificial situation (constrained social media platform) properly reflect a broader real-world phenomenon. For example, even after we conclude a successful study of self-esteem in a longitudinal social media dataset, its findings may not generalize to a broader setting because of worries that the kinds of people who self-select into a particular platform are not representative of the broader setting; or that the behaviors they express online may not be representative of their behaviors in other settings.</p>
+<p>Each type of Validity has a tradeoff depending on the method applied (see Figure XX).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/tradeoff_validity.png" alt="Types of Validity and Tradeoff. Taken from (Padilla, 2018)" width="100%" />
+<p class="caption">
+Figure 2.1: Types of Validity and Tradeoff. Taken from (Padilla, 2018)
+</p>
+</div>
+</div>
+</div>
+<div id="mapping-the-human-centered-design-process-and-the-nested-model" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Mapping the Human-Centered Design Process and the Nested Model</h2>
+<p>In Section <a href="sec:introduction.html#sec:hcd">1.1</a>, we introduced the human-centered design process; how can we bring the nested model and the human-centered design approach together? We can map the analysis step onto the domain situation level, the idea/concept step onto the data/task abstraction level, the design prototype step onto visual encoding/interaction idiom level and the algorithmic level. What is the advantage of this mapping? We can apply all methods, we know from human-centered design for designing our visualizations.</p>
+<p>In her visualization design work, Munzner realized that different ways to get a visualization design wrong <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span>. You might identify the wrong problem, by misunderstanding user’s needs. You might focus on the wrong data and tasks, thus, you’re showing them the wrong thing. You might decide for the wrong idiom, thus, the way you show the data doesn’t work. Finally, you might implement the visualization correctly, thus your code is too slow.</p>
+</div>
+<div id="major-elements-of-visualization-design" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Major Elements of Visualization Design</h2>
+<p>In the following, we want to focus on the major elements of visualization design the what–why–how questions which translate into a data–task–idiom trio. By focusing on this trio, we need to answer the following questions:
+* What data is shown in the views?
+* Why is the task being performed?
+* How is the vis idiom constructed in terms of design choices?</p>
+<p>In the following, we look into each question in more detail.</p>
+<div id="reflecting-on-data" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Reflecting on Data</h3>
+<p>Back in 2017, the newspaper ‘’The Economist’’ published a story titled, “The world’s most valuable resource is no longer oil, but data.” Since its publication, the topic has generated a great deal of discussion, and “Data is the new oil” has become a common refrain. How could this happen?</p>
+<p>Already in 2008, the Wired magazine editor Chris Anderson titled in an article “The End of Theory,” (<a href="https://www.wired.com/2008/06/pb-theory/" class="uri">https://www.wired.com/2008/06/pb-theory/</a>).</p>
+<blockquote>
+<p>This is a world where massive amounts of data and applied mathematics replace every other tool that might be brought to bear. Out with
+every theory of human behavior, from linguistics to sociology. […] Who knows why people do what they do? The point is they do it, and we &gt; can track and measure it with unprecedented fidelity. With enough data, the numbers speak for themselves.</p>
+<p>— Chris Anderson, WIRED, 2008</p>
+</blockquote>
+<p>Anderson made the claim that “with enough data, the numbers speak for themselves.” The article explains several examples of how the abundance of data helps people and companies take decision without even having to understand the meaning of the data itself. His assertion was that the age of Big Data will soon permit data scientists to do analysis at the scale of the population. Statistics is based on the idea that you can infer things about a population by taking a random and representative sample.At the point when we have data collected about an entire population, theory is no longer necessary. We also, he wrote, don’t need models and theories to understand why something is happening, just to be able to see that one thing is correlated with another: “Correlation is enough.”</p>
+<p>As D’Ignazio and Klein <span class="citation">(<a href="#ref-dignazio2020datafeminism" role="doc-biblioref">D’ignazio and Klein 2020</a>)</span> point out, there is a misconception when saying that ‘’numbers speak for themselves’’. The assumption is that data are a raw input rather than seeing them as artifacts that have emerged “fully cooked” into the world, birthed out of a complex set of social and political circumstances already existing in the data setting. But data is an output first. After that, it can become an input into a new process, but only with understanding of what the limitations of the collection environment were. “Raw Data” is an Oxymoron. Many data-driven projects aiming towards producing new, future insights forget to interrogate how the data got collected and cooked in the first place.</p>
+<p>What is the difference between data, information, and knowledge?</p>
+<p>The following three points summarize the essential differences between the three concepts <span class="citation">(<a href="#ref-aamodt1995datainformationknowledge" role="doc-biblioref">Aamodt and Nygård 1995</a>)</span>:
+Data are syntactic entities, i.e., data are patterns with no meaning; they are input to an interpretation process, i.e.
+to the initial step of decision making. Information is interpreted data, i.e., information is data with meaning; it is the output from data interpretation as well as the input to, and output from, the knowledge-based process of decision making. Knowledge is learned information, i.e., knowledge is information incorporated in an agent’s reasoning resources, and made ready for active use within a decision process; it is the output of a learning process. The role of knowledge, in general, is therefore to play the active part in the processes of transforming data into information, deriving other information, and acquiring new knowledge, i.e., to learn. This leads to the following summary of knowledge roles: knowledge is needed to transform data into information; knowledge is needed to derive new information from existing; knowledge is needed to acquire new knowledge, thus is referred to as data interpretation, to as elaboration, and to as learning.</p>
+<!-- A distinction between data and information is that data are uninterpreted characters, signals, patterns, signs, i.e. they have no meaning for the system concerned. Data becomes information after having been interpreted to give meaning. This is illustrated in the figure by the Data Interpretation arrow. In order to interpret data into information, a system needs knowledge.-->
+<!-- Once the data has been given an interpretation as information (an initial interpretation, at least) by the process described above, it is elaborated upon in order to be better understood and for deriving (inferring) new information. This is illustrated by the Elaboration arrow. Information that may be inferred in this way includes additional problem features, generated hypotheses, consequences of hypotheses, suggested solutions to problems, explanations and justifications of suggestions, critiquing arguments, etc. The elaboration process is the actual problem solving process, i.e. where the core decision-making takes place. Interpretation of data into information may be viewed, simplified, as a kind of pre-processing with respect to the core of the decision making process. However, frequent interaction with the environment during decision making blurs this picture and illustrates the over-simplification of such a view. In a more realistic decision-making process, elaboration and data interpretation are interleaved; initial interpretations get modified during elaboration, elaboration leads to questioning of the environment, which in turn leads to new or revised data being entered, or to revised interpretations of previous data.-->
+<!-- A system's knowledge grows and gets modified through interaction with the environment. This process is what we call learning. A widely shared view is that learning is the integration of new information into an existing body of knowledge, in a way that makes it potentially useful for later decision making. New knowledge may also come from inference processes within the knowledge body itself. This is illustrated by the two Learning arrows in the figure, respectively. We here focus on learning as the process that produces knowledge, this also says something important about what knowledge is. -->
+<p>As Donna Harraway emphazised all knowledge is ‘’situated.’’ <span class="citation">(<a href="#ref-haraway1988situated" role="doc-biblioref">Haraway 1988</a>)</span> It means that context matters. When we want to create new knowledge based on a given dataset, we have to reflect about the social, cultural, historical and material conditions in which that data was produced, as well as the people who created that data.Rather defining data as objective, that can be taken as it is, we need to connect data back to their context, to better understand existing limitations, but also for example, ethical obligations, or existing privacy concerns. However, we also need to think about our own role when analyzing the data. What is our perspective we bring in and how we decide which part of the data are valuable and which don’t. To come back to Chris Anderson. His post was possible also a provocation but when working with data, we need <em>more</em> theory, context, and scientific methods, not less. Why? Because data is often created by humans or by software that was designed by humans. Thus, it makes sense to add qualitative data to a dataset.</p>
+<p>Thick Data or qualitative data is data brought to light using qualitative, ethnographic research methods that uncover people’s emotions, stories, and models of their world <span class="citation">(<a href="#ref-wang2016bigdata" role="doc-biblioref">Tricia Wang 2016</a>)</span>. It’s the sticky stuff that’s difficult to quantify. It comes to us in the form of a small sample size and in return we get an incredible depth of meanings and stories. Thick Data is the opposite of Big Data (or thin data), which is quantitative data at a large scale that involves new technologies around capturing, storing, and analyzing. For Big Data to be analyzable, it must use normalizing, standardizing, defining, clustering, all processes that strips the the data set of context, meaning, and stories. Thick Data can rescue Big Data from the context-loss that comes with the processes of making it usable.</p>
+<p>Big Data requires a humongous N to uncover patterns at a large scale while Thick Data requires a small N to see human-centered patterns in depth. Both types of Thick Data relies on human learning, while Big Data relies on machine learning. Thick Data reveals the social context of connections between data points while Big Data reveals insights with a particular range of quantified data points. Thick Data techniques accepts irreducible complexity, while Big Data techniques isolates variables to identify patterns. Thick Data loses scale while Big Data loses resolution.</p>
+<p>Thus it makes sense to take a human-centered design approach. You should think about the audience, the purpose and the context of your research.
+* Audience: Who are you publishing your research for?
+* Purpose: How do you want them to use your research?
+* Context: What factors (under your control) will impact whether/how they use it?</p>
+<p>Publishing your research openly shows that you take responsibility for your research. Including the possibility that you might be wrong. It provides transparency around your values, motivations, and assumptions. Having a public audience in mind when designing and publishing your projects encourages you to reflect on your values, motivations, assumptions, and thought process—and how that might influence your project. Thinking in terms of HCD can also help you think of trade-offs in open research. For example, it can help you decide when/what NOT to publish openly!</p>
+<div id="data-set" class="section level4" number="2.3.1.1">
+<h4><span class="header-section-number">2.3.1.1</span> Data Set</h4>
+<p>What kind of data are you given? What information can you figure out from the data, versus the meanings that you must be told explicitly? What high-level concepts will allow you to split datasets apart into general and useful pieces? To move beyond guesses, you need to know two crosscutting pieces of information about these terms: their semantics and their types. The semantics of the data is its real-world meaning.</p>
+<p>A dataset is any collection of data. There are four basic dataset types: tables, networks/trees, spatial (fields, geometry). In real-world situations, complex combinations of these basic types are common.</p>
+<p>Consider the concept of a table as a type of record that is independent of any particular visual representation. In (simple flat) tables, each row represents an item of data, and each column is an attribute of the dataset. Each cell in the table is fully specified by the combination of a row and a column and contains a value for that pair. A multidimensional table has a more complex structure since each cell is indexed by multiple keys. It can be a table in a table, which is called a tensor.</p>
+<p>Networks are well suited for specifying some kind of relationship between two or more items. An item in a network is often called a node (or vertex). A link (or edge) is a relation between two items. Nodes can have associated attributes, just like items in a table.Links could also have attributes associated with them; these may be partly or wholly disjoint from the node attributes. Networks can also be represented by two tables. Networks with hierarchical structure are more specifically called trees. In contrast to a general network, trees do not have cycles: each child node has only one parent node pointing to it.</p>
+<p>The field dataset type also contains attribute values associated with cells. Each cell in a field contains measurements or calculations from a continuous domain. Continuous phenomena include temperature, pressure, speed, force, and density (or mathematical functions).
+Continuous data requires careful treatment that takes into account the mathematical questions of sampling, how frequently to take the measurements, and interpolation, how to show values in between the sampled points in a way that does not mislead.</p>
+<p>The geometry dataset type specifies information about the shape of items with explicit spatial positions. The items could be points, or one-dimensional lines or curves, or 2D surfaces or regions, or 3D volumes. Spatial data often includes hierarchical structure at multiple scales.</p>
+</div>
+<div id="what-data-types-should-be-differentiated" class="section level4" number="2.3.1.2">
+<h4><span class="header-section-number">2.3.1.2</span> What Data Types Should be Differentiated?</h4>
+<p>An attribute is some specific property that can be measured, observed, or logged. For example, attributes could be salary, price, or protein expression levels.
+An item is an individual entity that is discrete, such as a row in a simple table. For example, items may be people, stocks, or genes.
+A link is a relationship between items, typically within a network.<br />
+A position is spatial data, providing a location in two-dimensional (2D) or three-dimensional (3D) space.
+A grid specifies the strategy for sampling continuous data in terms of both geometric and topological relationships between its cells.</p>
+</div>
+<div id="sec:variabletype" class="section level4" number="2.3.1.3">
+<h4><span class="header-section-number">2.3.1.3</span> What Attribute Types Do you Know?</h4>
+<p>What kind of data are you given? What information can you figure out from the data, versus the meanings that you must be told explicitly? What high-level concepts will allow you to split datasets apart into general and useful pieces?</p>
+<p>To move beyond guesses, you need to know two crosscutting pieces of information about these terms: their semantics and their types. The semantics of the data is its real-world meaning.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="images/attribute_types.png" alt="Types of variables encountered in typical data visualization scenarios. Taken from (https://clauswilke.com/dataviz/aesthetic-mapping.html)" width="100%" />
+<p class="caption">
+Figure 2.2: Types of variables encountered in typical data visualization scenarios. Taken from (<a href="https://clauswilke.com/dataviz/aesthetic-mapping.html" class="uri">https://clauswilke.com/dataviz/aesthetic-mapping.html</a>)
+</p>
+</div>
+</div>
+</div>
+<div id="reflecting-on-tasks" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Reflecting on Tasks</h3>
+<p>Why Analyze Tasks Abstractly? You need to consider tasks in an abstract form, rather than the domain-specific way that users typically think about them. Transforming task descriptions from domain-specific language into abstract form allows you to reason about similarities and differences between them.</p>
+<p>Munzner <span class="citation">(<a href="#ref-munzner2014visualization" role="doc-biblioref">Munzner 2014</a>)</span> differentiated a small set of carefully chosen words to describe why people are using visualization, designed to help you crisply and concisely distinguish between different goals. We differentiate a set has verbs describing actions, and nouns describing targets.</p>
+<div id="user-goals-are-defined-by-actions" class="section level4" number="2.3.2.1">
+<h4><span class="header-section-number">2.3.2.1</span> User Goals are Defined by Actions</h4>
+<p>We can define three levels of action. The high-level choices describe how the visualisation is being used to analyze, either to consume existing data or to also produce additional data. The mid-level choices cover what kind of search is involved, in terms of whether the target and location are known or not. The low-level choices pertain to the kind of query: does the user need to identify one target, compare some targets, or summarize all of the targets? Decisions at each of these three levels are independent, and it is usually useful to describe actions at all three levels.</p>
+<p><em>Action: Analyze for Consumption or Production</em> In contrast to the use of vis only for the consumption of existing information, in the production case the intention of the user is to generate new material. Often, the goal in production is to produce output that is immediately used as input for a next instance. Sometimes the user intends to use this new material for some other vision-related task, such as discovery or presentation. Sometimes the intended use of the new material is for another purpose that does not require a vis, such as downstream analysis with non-visual tools. There are three types of production goals: Annotate, Record, and Derive.</p>
+<p><em>Action: Search and their Classification</em> All high-level analysis cases require the user to search for items of interest within the vis as a middle-level target. The classification of search into four alternatives is broken down according to whether the identity and location of the search target is already known or not. If users already know both what they’re looking for and where it is, then the search type is simply lookup. If users want to find a known target at an unknown location, the search type is locate, that is, find out where the specific object is. If users don’t know exactly what they’re looking for, but they do have a location in mind of where to look for it, the search type is browse. If users are not even sure of the location, the search type is explore.</p>
+<p><em>Action: Query</em>
+A low-level user goal is to query targets at one of three scopes. Once a target or set of targets for a search has been found, a low- level user goal is to query these targets at one of three scopes: identify, compare, or summarize. The progression of these three corresponds to an increase in the amount of search targets under consideration: one, some, or all. That is, identify refers to a single target, compare refers to multiple targets, and summarize refers to the full set of possible targets.</p>
+<p><em>Actions Refer to Targets</em>
+All actions refer to a target, i.e. an aspect of the data that is of interest to the user. The idea of a goal is explicit in search and query actions. It is more implicitly related to the usage actions, but still relevant: for example, what the user presents or discovers.</p>
+<p>Tasks are defined by a {action, target} pairs, for example, discover distribution, compare trends, locate outliers, browse topology.</p>
+</div>
+</div>
+<div id="the-how-of-visualization-design---at-a-glance" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> The How of Visualization Design - At A Glance</h3>
+<p><strong>Coming Soon</strong></p>
+<!-- ## The What-Why-How of Visualization Design
+The design space of possible visualisation idioms is huge, and includes the considerations of both how to create and how to interact with visual representations.
+Visualization design is full of trade-offs, and most possibilities in the design space are ineffective for a particular task, so validating the effectiveness of a design is both necessary and difficult. You must take into account three very different kinds of resource limitations: those of computers, of humans, and of displays. 
+Visualisation usage can be analysed in terms of why the user needs it, what data is shown, and how the idiom is designed. 
+
+### Knowledge the Design Space of Possible Visualizations
+First, there is the space for all possible solutions, including possible solutions that no one has ever thought of. 
+Next, there is the set of possibilities known to you, the vis designer. Of course, this set might be small if you are a beginner who is not familiar with the full range of methods that have been proposed in the past. If you are in this situation, one of the goals of this event is to expand the set of methods. 
+
+The next set is the consideration space, which contains the solutions you are actively considering. This set is necessarily smaller than the known space, since you cannot consider what you do not know. An even smaller set is the proposal space of possibilities that you explore in detail via prototyping. Eventually, one of them becomes the chosen solution.
+
+Is it a good solution? Probably not.
+
+
+
+We have learned last week that we live a data area. However, data are not meaningful by themselves. We need to find appropriate approaches to explore data, to relate data to each other, and to communicate it meaningfully~\cite{KlingStar1998:HCD}.
+
+## Übung
+https://docs.google.com/document/d/1HDAyT5tCVR0uRmt4FpkjNsGlA1fKBMiWES87dVDEjjE/edit#heading=h.jmyr3335vjfs
+http://www.cond.org/vizitcards.pdf
+https://pdritsos.com/files/Roberts-et-al-FDS-2016.pdf
+
+## Data
+* data sheets
+
+## Side Topic: Meaning
+
+Understanding is the ability to grasp the meaning of information. Information is conveyed in a message using a specific language. Information is understood by the receiver of a message, if the receiver interprets the information correctly. A correct interpretation depends on Syntax, Semantics, and Pragmatics.
+
+### Syntax
+* It originates from the greek language and means arrangement and ordering.
+* In grammatics syntax denotes the study of principles and processes by which sentences are constructed in particular languages.
+* In formal languages, syntax is just a set of rules, by which well formed expressions can be created from a fundamental set of symbols (alphabet).
+* In computer science, syntax defines the normative structure of data.
+
+### Semantics
+* It originates from the greek language. It pertains to the character, the study of meaning.
+* Is part of the linguistics focussed on Sense and Meaning of language or symbols of language.
+* Is the study of interpretation of signs or symbols as used by agents or communities within particular circumstances and contexts.
+* Semantics asks, how sense and meaning of complex concepts can be derived from simple concepts based on the rules of syntax.
+* The semantics of a message depends on context and pragmatics.
+
+### Pragmatics
+* It originates from the greek language and relates to action.
+* It reflects the intention by which the language is used to communicate a message.
+* In linguistics, pragmatics denotes the study of applying language in different situations.
+* It also denotes the intended purpose of the speaker.
+* Pragmatics studies the ways in which context contributes to meaning.
+
+### Example Traffic Light Situation
+* (Awareness) Syntax: green (bottom); yellow; red
+* Semantic: green = go; …; red = stop
+* Pragmatics: If red and no traffic then it is allowed to go
+
+### Difference between Data Type and Semantics
+* The data type is an abstract classification that has implications on 
+mathematical operations data structure (how the data are stored, e.g. boolean, short, int, float, double, string)
+* The abstract type provides a description of the data. It is characterized by methods / attributes and it may be organized into a hierarchy.
+* Remember, if the semantics is given, the type will follow.
+
+
+## Data Needs Context
+
+https://medium.com/big-data-small-meaning-and-global-discourses/research-data-is-a-product-of-its-time-67e972aea9b7
+https://raley.english.ucsb.edu/wp-content/Engl800/RawData-excerpts.pdf
+https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3
+https://medium.com/@kanarinka/what-would-feminist-data-visualization-look-like-aa3f8fc7f96c
+https://medium.com/nightingale/the-data-are-not-objective-and-neither-are-you-285b15a1b584
+https://library.oapen.org/bitstream/handle/20.500.12657/22273/9789048543137.pdf?sequence=1%20#page=392
+https://transmarcations.constantvzw.org/texts/Pierre_Visions_carto.pdf
+
+
+
+
+
+
+Here you can see what happens if you consider a larger space of possible solutions.
+
+A basic design principle is to consider multiple alternatives and then choose the best one, rather than immediately focusing on one solution without considering alternatives. One way to ensure that more than one possibility is considered is to explicitly generate multiple ideas in parallel.
+
+In the following, I will introduce a framework that helps you to get structure on the huge design space. Such scaffold will help you to think systematically about choices.
+
+
+
+
+## Validity
+https://medium.com/multiple-views-visualization-research-explained/how-do-we-know-when-a-visualization-is-good-c894b5194b62
+Padilla, L. M. (2018, October). A case for cognitive models in visualization research: Position paper. In 2018 IEEE Evaluation and Beyond-Methodological Approaches for Visualization (BELIV) (pp. 69-77). IEEE.
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-aamodt1995datainformationknowledge" class="csl-entry">
+Aamodt, Agnar, and Mads Nygård. 1995. <span>“Different Roles and Mutual Dependencies of Data, Information, and Knowledge—an AI Perspective on Their Integration.”</span> <em>Data &amp; Knowledge Engineering</em> 16 (3): 191–222.
+</div>
+<div id="ref-dignazio2020datafeminism" class="csl-entry">
+D’ignazio, Catherine, and Lauren F Klein. 2020. <em>Data Feminism</em>. MIT press.
+</div>
+<div id="ref-fry2008visualizing" class="csl-entry">
+Fry, Ben. 2008. <em>Visualizing Data: Exploring and Explaining Data with the Processing Environment</em>. O’Reilly Media, Inc.
+</div>
+<div id="ref-haraway1988situated" class="csl-entry">
+Haraway, Donna. 1988. <span>“Situated Knowledges: The Science Question in Feminism and the Privilege of Partial Perspective.”</span> <em>Feminist Studies</em> 14 (3): 575–99.
+</div>
+<div id="ref-kirk2019data" class="csl-entry">
+Kirk, Andy. 2016. <em>Data Visualisation: A Handbook for Data Driven Design</em>. Sage.
+</div>
+<div id="ref-munzner2014visualization" class="csl-entry">
+Munzner, Tamara. 2014. <em>Visualization Analysis and Design</em>. CRC press.
+</div>
+<div id="ref-wang2016bigdata" class="csl-entry">
+Tricia Wang. 2016. <span>“Why Big Data Needs Thick Data.”</span> Medium. <a href="https://medium.com/ethnography-matters/why-big-data-needs-thick-data-b4b3e75e3d7">https://medium.com/ethnography-matters/why-big-data-needs-thick-data-b4b3e75e3d7</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sec:introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sec:understandingdata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-need_for_data_viz.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Data Vizualization - From a Human-Centered Design Perspective (Lecture Notes).pdf", "Data Vizualization - From a Human-Centered Design Perspective (Lecture Notes).epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
