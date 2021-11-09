@@ -19,6 +19,9 @@ fig:chunk-label17a
 fig:chunk-label11-1
 fig:chunk-label19
 fig:chunk-label20
+fig:unnamed-chunk-8
+fig:unnamed-chunk-9
+fig:unnamed-chunk-10
 the-value-of-data-visualization
 example-visualizations
 napoleons-march
@@ -60,3 +63,11 @@ covariance-and-correlation
 correlation-matrix
 general-guidelines-for-eda
 tools-and-libraries-for-data-exploration
+human-perception-and-visual-encoding
+human-perception
+the-human-eye
+color-vision
+spation-vision
+pre-attentive-processing
+choice-of-encoding---bertins-guidance
+combining-channels

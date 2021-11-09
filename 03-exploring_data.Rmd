@@ -36,6 +36,8 @@ https://bookdown.org/ronsarafian/IntrotoDS/eda.html#summary-statistics
 https://www.hcbravo.org/IntroDataSci/bookdown-notes/exploratory-data-analysis-summary-statistics.html
 https://bookdown.org/BaktiSiregar/data-science-for-beginners/EDA.html-->
 
+<!--NEXT TERM: CHANGE THE ORDERING: mean, distribution, variability - ask for both datasets questions, check if for the first part the second data set is more appropriate, and the other way around (or leave out outlier of the flight dataset) -->
+
 In this section, we focus on understanding the structure of our data by employing the Exploratory Data Analysis (EDA). EDA is an approach of analyzing data sets to summarize their main characteristics by using data visualizations. In 1970 John Tukey [@Tukey1977eda] introduced EDA with this seminal book on this topic. He was an extraordinary scientist who had a profound impact on statistics and computer science^[I highly recommend reading more about him, for example in https://www.stat.berkeley.edu/~brill/Papers/life.pdf .]. Much of what we cover in EDA today is based on his work. Part of EDA is the so-called initial data analysis (IDA) (https://towardsdatascience.com/a-basic-guide-to-initial-and-exploratory-data-analysis-6d2577dfc242). IDA focuses on identifying data inconsistencies (e.g., missing values) and the description of the data properties; thus, EDA encompasses IDA. 
 
 EDA allows the data analysts to achieve a richer qualitative understanding by ''looking at data to see what it seems to say''. Explorative Data Analysis should be understood as an iterative process that supports:
@@ -484,15 +486,15 @@ diamonds %>%
 However, how do we quantitatively summarize the relationship between two variables. We need to extend our notion of scatter (or variation of data around the mean) to the notion of covariation: do pairs of variables vary around the mean in the same way or more precisly, does x~i vary in the same direction and on the same scale away from its mean as y~i? 
 
 This leads to covariance:
-$cov(x,y =\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})(y_i -\bar{y})$
+$cov(x,y) =\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})(y_i -\bar{y})$
 
 Correlation (formally, Pearson’s correlation coefficient) summarizes the same relationship in a unit-less way:
 
-$r(x,y)=\frac{con(x,y)}{sd(x)sd(y)}$ 
+$cor(x,y)=\frac{cov(x,y)}{sd(x)sd(y)}$ 
 
 Correlation evaluates the direction as well as strength of a relationship between continuous variables. The correlation coefficient can range from -1 to +1, which signifies strong negative to strong positive relation between the variables. 
 
-You can think of the correlation as the covariance between x and y after transforming each to the unitless scale of z-scores. Just to recall, a z-score of a sample x is defined as the mean-centered, scale normalized observations: $z_i(x)=\frac{x_i-\bar{x}}{sd(x)}$, thus $r(x,y)=Cov(z(x),z(y))$. 
+You can think of the correlation as the covariance between x and y after transforming each to the unitless scale of z-scores. Just to recall, a z-score of a sample x is defined as the mean-centered, scale normalized observations: $z_i(x)=\frac{x_i-\bar{x}}{sd(x)}$, thus $r(x,y)=cov(z(x),z(y))$. 
 
 ### Correlation Matrix
 <!--https://rkabacoff.github.io/datavis/Models.html

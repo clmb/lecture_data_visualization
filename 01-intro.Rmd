@@ -48,6 +48,8 @@ knitr::include_graphics("images/snow-cholera-map.jpg")
 ```
 
 
+<!-- add Playfair Graph, da es in Chapter 4 verwendet wird -->
+
 ### Cholera Epidemic in London
 <!-- Further information: https://www.ph.ucla.edu/epi/snow/highressnowmap.html -->
 

@@ -188,7 +188,13 @@ Tasks are defined by a {action, target} pairs, for example, discover distributio
 
 ### The How of Visualization Design - At A Glance
 
-__Coming Soon__
+Bostock et al. [@Heer_Bostock_Ogievetsky_2010] state: 
+
+> All visualizations share a common “DNA” – a set of mappings between data properties and visual attributes 
+> such as position, size, shape, and color – and customized species of visualizations might always be constructed > by varying these encodings.
+
+
+__More Coming Soon__
 
 
 <!-- ## The What-Why-How of Visualization Design
