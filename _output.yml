@@ -19,7 +19,7 @@ bookdown::pdf_book:
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-  extra_dependencies: "subfig"
+  extra_dependencies: "subfig, awesomebox"
   toc_depth: 3
   toc_unnumbered: no
   toc_appendix: yes

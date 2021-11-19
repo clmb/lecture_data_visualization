@@ -24,7 +24,7 @@
 <meta name="author" content="Claudia Müller-Birn" />
 
 
-<meta name="date" content="2021-11-09" />
+<meta name="date" content="2021-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -225,6 +225,13 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="human-perception-and-visual-encoding.html"><a href="human-perception-and-visual-encoding.html#combining-channels"><i class="fa fa-check"></i><b>4.3</b> Combining Channels</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="visualizing-tabular-data.html"><a href="visualizing-tabular-data.html"><i class="fa fa-check"></i><b>5</b> Visualizing Tabular Data</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="visualizing-tabular-data.html"><a href="visualizing-tabular-data.html#visual-encoding-for-numerical-data"><i class="fa fa-check"></i><b>5.1</b> Visual Encoding for Numerical Data</a></li>
+<li class="chapter" data-level="5.2" data-path="visualizing-tabular-data.html"><a href="visualizing-tabular-data.html#Visual-Encoding-for-Categorical-Data"><i class="fa fa-check"></i><b>5.2</b> Visual Encoding for Categorical Data</a></li>
+<li class="chapter" data-level="5.3" data-path="visualizing-tabular-data.html"><a href="visualizing-tabular-data.html#spatial-axis-orientation"><i class="fa fa-check"></i><b>5.3</b> Spatial Axis Orientation</a></li>
+<li class="chapter" data-level="5.4" data-path="visualizing-tabular-data.html"><a href="visualizing-tabular-data.html#spatial-layout-density"><i class="fa fa-check"></i><b>5.4</b> Spatial Layout Density</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -282,7 +289,9 @@ FIGURE3.1: Example of the Dataset Nutrion Label (first generation). Taken from <
 <!-- Useful Ressources:
 https://bookdown.org/ronsarafian/IntrotoDS/eda.html#summary-statistics
 https://www.hcbravo.org/IntroDataSci/bookdown-notes/exploratory-data-analysis-summary-statistics.html
-https://bookdown.org/BaktiSiregar/data-science-for-beginners/EDA.html-->
+https://bookdown.org/BaktiSiregar/data-science-for-beginners/EDA.html
+https://biosakshat.github.io/data-visualization.html
+https://www.wekaleamstudios.co.uk/exploratory-data-analysis/-->
 <!--NEXT TERM: CHANGE THE ORDERING: mean, distribution, variability - ask for both datasets questions, check if for the first part the second data set is more appropriate, and the other way around (or leave out outlier of the flight dataset) -->
 <p>In this section, we focus on understanding the structure of our data by employing the Exploratory Data Analysis (EDA). EDA is an approach of analyzing data sets to summarize their main characteristics by using data visualizations. In 1970 John Tukey <span class="citation">(<a href="#ref-Tukey1977eda" role="doc-biblioref">Tukey 1977</a>)</span> introduced EDA with this seminal book on this topic. He was an extraordinary scientist who had a profound impact on statistics and computer science<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. Much of what we cover in EDA today is based on his work. Part of EDA is the so-called initial data analysis (IDA) (<a href="https://towardsdatascience.com/a-basic-guide-to-initial-and-exploratory-data-analysis-6d2577dfc242" class="uri">https://towardsdatascience.com/a-basic-guide-to-initial-and-exploratory-data-analysis-6d2577dfc242</a>). IDA focuses on identifying data inconsistencies (e.g., missing values) and the description of the data properties; thus, EDA encompasses IDA.</p>
 <p>EDA allows the data analysts to achieve a richer qualitative understanding by ‘’looking at data to see what it seems to say’’. Explorative Data Analysis should be understood as an iterative process that supports:

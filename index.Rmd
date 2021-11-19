@@ -17,6 +17,13 @@ description: |
 
 # Preface {-}
 
+<!-- https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html -->
+<!--::: {.infobox .important data-latex="{important}"}
+**PLEASE NOTE!**
+
+These lecture notes are neither for distribution nor for reference. It is just a first draft and many resources may not be referenced yet, furthermore, images are largely missing. I update these lecture notes throughout the course. If you spot any major mistakes, let me know.
+:::  -->
+
 The current rapid technological development requires the processing of large amounts of data of various kinds to make them usable by humans. This challenge affects many areas of life today, such as research, business, and politics. In these contexts, decision-makers use data visualizations to explain information and its relationships through graphical representations of data. This course aims to familiarize students with the principles, techniques, and methods in data visualization and provide practical skills for designing and implementing data visualizations.
 
 The master course «data visualization» is intended for students interested in better understanding how to critically engage with data visualization and how to design effective data visualizations reflectively. 

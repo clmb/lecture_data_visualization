@@ -29,12 +29,18 @@ Building on this idea Holland et al. [@Hollandetal2018DatasetNutritionLabel] pro
 knitr::include_graphics("images/dataset_nutrion_label.png")
 ```
 
-## Understanding the Data Structure
+## Understanding the Data Structure {#Understanding-the-Data-Structure}
 
 <!-- Useful Ressources:
 https://bookdown.org/ronsarafian/IntrotoDS/eda.html#summary-statistics
 https://www.hcbravo.org/IntroDataSci/bookdown-notes/exploratory-data-analysis-summary-statistics.html
-https://bookdown.org/BaktiSiregar/data-science-for-beginners/EDA.html-->
+https://bookdown.org/BaktiSiregar/data-science-for-beginners/EDA.html
+https://biosakshat.github.io/data-visualization.html
+https://www.wekaleamstudios.co.uk/exploratory-data-analysis/
+https://bolt.mph.ufl.edu/6050-6052/unit-1/
+https://www.epa.gov/caddis-vol4/exploratory-data-analysis
+https://medium.com/swlh/effective-visualization-of-multi-dimensional-data-a-hands-on-approach-b48f36a56ee8
+-->
 
 <!--NEXT TERM: CHANGE THE ORDERING: mean, distribution, variability - ask for both datasets questions, check if for the first part the second data set is more appropriate, and the other way around (or leave out outlier of the flight dataset) -->
 
